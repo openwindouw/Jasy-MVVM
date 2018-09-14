@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
+		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
+		E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA37214B50EC00CE119A /* AppDelegate.swift */; };
+		E7DDDA3A214B50EC00CE119A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA39214B50EC00CE119A /* ViewController.swift */; };
+		E7DDDA3D214B50EC00CE119A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA3B214B50EC00CE119A /* Main.storyboard */; };
+		E7DDDA3F214B50ED00CE119A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA3E214B50ED00CE119A /* Assets.xcassets */; };
+		E7DDDA42214B50ED00CE119A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA40214B50ED00CE119A /* LaunchScreen.storyboard */; };
+		E7DDDA4D214B50EE00CE119A /* JasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA4C214B50EE00CE119A /* JasyTests.swift */; };
+		E7DDDA58214B50EE00CE119A /* JasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA57214B50EE00CE119A /* JasyUITests.swift */; };
+		F02025AFDA50501ADA3509D2 /* Pods_Jasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2944B91F3FE988BBC9577C1F /* Pods_Jasy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7DDDA49214B50EE00CE119A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7DDDA2C214B50EB00CE119A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7DDDA33214B50EC00CE119A;
+			remoteInfo = Jasy;
+		};
+		E7DDDA54214B50EE00CE119A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7DDDA2C214B50EB00CE119A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7DDDA33214B50EC00CE119A;
+			remoteInfo = Jasy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2944B91F3FE988BBC9577C1F /* Pods_Jasy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jasy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JasyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72FF5D5E0D6479AD3DD7A29D /* Pods-JasyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.release.xcconfig"; sourceTree = "<group>"; };
+		7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.debug.xcconfig"; sourceTree = "<group>"; };
+		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
+		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7DDDA34214B50EC00CE119A /* Jasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DDDA37214B50EC00CE119A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E7DDDA39214B50EC00CE119A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7DDDA3C214B50EC00CE119A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7DDDA3E214B50ED00CE119A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7DDDA41214B50ED00CE119A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E7DDDA43214B50ED00CE119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DDDA48214B50EE00CE119A /* JasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DDDA4C214B50EE00CE119A /* JasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JasyTests.swift; sourceTree = "<group>"; };
+		E7DDDA4E214B50EE00CE119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DDDA53214B50EE00CE119A /* JasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DDDA57214B50EE00CE119A /* JasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JasyUITests.swift; sourceTree = "<group>"; };
+		E7DDDA59214B50EE00CE119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7DDDA31214B50EC00CE119A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02025AFDA50501ADA3509D2 /* Pods_Jasy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA45214B50EE00CE119A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA50214B50EE00CE119A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34CB74513B812D5152CD8BF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */,
+				9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */,
+				809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */,
+				78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */,
+				B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */,
+				72FF5D5E0D6479AD3DD7A29D /* Pods-JasyUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83F1A4DAE1A8FD7D0AA9FF9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2944B91F3FE988BBC9577C1F /* Pods_Jasy.framework */,
+				52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */,
+				6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7DDDA2B214B50EB00CE119A = {
+			isa = PBXGroup;
+			children = (
+				E7DDDA36214B50EC00CE119A /* Jasy */,
+				E7DDDA4B214B50EE00CE119A /* JasyTests */,
+				E7DDDA56214B50EE00CE119A /* JasyUITests */,
+				E7DDDA35214B50EC00CE119A /* Products */,
+				34CB74513B812D5152CD8BF6 /* Pods */,
+				83F1A4DAE1A8FD7D0AA9FF9B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E7DDDA35214B50EC00CE119A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDDA34214B50EC00CE119A /* Jasy.app */,
+				E7DDDA48214B50EE00CE119A /* JasyTests.xctest */,
+				E7DDDA53214B50EE00CE119A /* JasyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7DDDA36214B50EC00CE119A /* Jasy */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDDA37214B50EC00CE119A /* AppDelegate.swift */,
+				E7DDDA39214B50EC00CE119A /* ViewController.swift */,
+				E7DDDA3B214B50EC00CE119A /* Main.storyboard */,
+				E7DDDA3E214B50ED00CE119A /* Assets.xcassets */,
+				E7DDDA40214B50ED00CE119A /* LaunchScreen.storyboard */,
+				E7DDDA43214B50ED00CE119A /* Info.plist */,
+			);
+			path = Jasy;
+			sourceTree = "<group>";
+		};
+		E7DDDA4B214B50EE00CE119A /* JasyTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDDA4C214B50EE00CE119A /* JasyTests.swift */,
+				E7DDDA4E214B50EE00CE119A /* Info.plist */,
+			);
+			path = JasyTests;
+			sourceTree = "<group>";
+		};
+		E7DDDA56214B50EE00CE119A /* JasyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDDA57214B50EE00CE119A /* JasyUITests.swift */,
+				E7DDDA59214B50EE00CE119A /* Info.plist */,
+			);
+			path = JasyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7DDDA33214B50EC00CE119A /* Jasy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DDDA5C214B50EE00CE119A /* Build configuration list for PBXNativeTarget "Jasy" */;
+			buildPhases = (
+				C230935A16628FC24F2E0432 /* [CP] Check Pods Manifest.lock */,
+				E7DDDA30214B50EC00CE119A /* Sources */,
+				E7DDDA31214B50EC00CE119A /* Frameworks */,
+				E7DDDA32214B50EC00CE119A /* Resources */,
+				142F6B74FA226EBCAA122DF5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jasy;
+			productName = Jasy;
+			productReference = E7DDDA34214B50EC00CE119A /* Jasy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7DDDA47214B50EE00CE119A /* JasyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DDDA5F214B50EE00CE119A /* Build configuration list for PBXNativeTarget "JasyTests" */;
+			buildPhases = (
+				A1AF7DDDF3912FAD9BA523BA /* [CP] Check Pods Manifest.lock */,
+				E7DDDA44214B50EE00CE119A /* Sources */,
+				E7DDDA45214B50EE00CE119A /* Frameworks */,
+				E7DDDA46214B50EE00CE119A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7DDDA4A214B50EE00CE119A /* PBXTargetDependency */,
+			);
+			name = JasyTests;
+			productName = JasyTests;
+			productReference = E7DDDA48214B50EE00CE119A /* JasyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E7DDDA52214B50EE00CE119A /* JasyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DDDA62214B50EE00CE119A /* Build configuration list for PBXNativeTarget "JasyUITests" */;
+			buildPhases = (
+				633ACCA00A7DAA970A31E5E3 /* [CP] Check Pods Manifest.lock */,
+				E7DDDA4F214B50EE00CE119A /* Sources */,
+				E7DDDA50214B50EE00CE119A /* Frameworks */,
+				E7DDDA51214B50EE00CE119A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7DDDA55214B50EE00CE119A /* PBXTargetDependency */,
+			);
+			name = JasyUITests;
+			productName = JasyUITests;
+			productReference = E7DDDA53214B50EE00CE119A /* JasyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7DDDA2C214B50EB00CE119A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Vladimir Espinola";
+				TargetAttributes = {
+					E7DDDA33214B50EC00CE119A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					E7DDDA47214B50EE00CE119A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E7DDDA33214B50EC00CE119A;
+					};
+					E7DDDA52214B50EE00CE119A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E7DDDA33214B50EC00CE119A;
+					};
+				};
+			};
+			buildConfigurationList = E7DDDA2F214B50EB00CE119A /* Build configuration list for PBXProject "Jasy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7DDDA2B214B50EB00CE119A;
+			productRefGroup = E7DDDA35214B50EC00CE119A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7DDDA33214B50EC00CE119A /* Jasy */,
+				E7DDDA47214B50EE00CE119A /* JasyTests */,
+				E7DDDA52214B50EE00CE119A /* JasyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7DDDA32214B50EC00CE119A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DDDA42214B50ED00CE119A /* LaunchScreen.storyboard in Resources */,
+				E7DDDA3F214B50ED00CE119A /* Assets.xcassets in Resources */,
+				E7DDDA3D214B50EC00CE119A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA46214B50EE00CE119A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA51214B50EE00CE119A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		142F6B74FA226EBCAA122DF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jasy/Pods-Jasy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jasy/Pods-Jasy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		633ACCA00A7DAA970A31E5E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JasyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1AF7DDDF3912FAD9BA523BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JasyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C230935A16628FC24F2E0432 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jasy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7DDDA30214B50EC00CE119A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DDDA3A214B50EC00CE119A /* ViewController.swift in Sources */,
+				E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA44214B50EE00CE119A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DDDA4D214B50EE00CE119A /* JasyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DDDA4F214B50EE00CE119A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DDDA58214B50EE00CE119A /* JasyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7DDDA4A214B50EE00CE119A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7DDDA33214B50EC00CE119A /* Jasy */;
+			targetProxy = E7DDDA49214B50EE00CE119A /* PBXContainerItemProxy */;
+		};
+		E7DDDA55214B50EE00CE119A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7DDDA33214B50EC00CE119A /* Jasy */;
+			targetProxy = E7DDDA54214B50EE00CE119A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7DDDA3B214B50EC00CE119A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7DDDA3C214B50EC00CE119A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7DDDA40214B50ED00CE119A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7DDDA41214B50ED00CE119A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7DDDA5A214B50EE00CE119A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E7DDDA5B214B50EE00CE119A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7DDDA5D214B50EE00CE119A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = Jasy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E7DDDA5E214B50EE00CE119A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = Jasy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E7DDDA60214B50EE00CE119A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = JasyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.JasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jasy.app/Jasy";
+			};
+			name = Debug;
+		};
+		E7DDDA61214B50EE00CE119A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = JasyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.JasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jasy.app/Jasy";
+			};
+			name = Release;
+		};
+		E7DDDA63214B50EE00CE119A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = JasyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.JasyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jasy;
+			};
+			name = Debug;
+		};
+		E7DDDA64214B50EE00CE119A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72FF5D5E0D6479AD3DD7A29D /* Pods-JasyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LXE5SAW38H;
+				INFOPLIST_FILE = JasyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.JasyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jasy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7DDDA2F214B50EB00CE119A /* Build configuration list for PBXProject "Jasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DDDA5A214B50EE00CE119A /* Debug */,
+				E7DDDA5B214B50EE00CE119A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7DDDA5C214B50EE00CE119A /* Build configuration list for PBXNativeTarget "Jasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DDDA5D214B50EE00CE119A /* Debug */,
+				E7DDDA5E214B50EE00CE119A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7DDDA5F214B50EE00CE119A /* Build configuration list for PBXNativeTarget "JasyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DDDA60214B50EE00CE119A /* Debug */,
+				E7DDDA61214B50EE00CE119A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7DDDA62214B50EE00CE119A /* Build configuration list for PBXNativeTarget "JasyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DDDA63214B50EE00CE119A /* Debug */,
+				E7DDDA64214B50EE00CE119A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7DDDA2C214B50EB00CE119A /* Project object */;
+}
