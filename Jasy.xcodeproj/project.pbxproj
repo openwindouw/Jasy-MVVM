@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
+		E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4697214CADF200ECF968 /* NasaClient.swift */; };
 		E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA37214B50EC00CE119A /* AppDelegate.swift */; };
 		E7DDDA3A214B50EC00CE119A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA39214B50EC00CE119A /* ViewController.swift */; };
 		E7DDDA3D214B50EC00CE119A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA3B214B50EC00CE119A /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
 		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E72F4697214CADF200ECF968 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		E7DDDA34214B50EC00CE119A /* Jasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DDDA37214B50EC00CE119A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7DDDA39214B50EC00CE119A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E72F4696214CADA200ECF968 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E72F4697214CADF200ECF968 /* NasaClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E7DDDA2B214B50EB00CE119A = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		E7DDDA36214B50EC00CE119A /* Jasy */ = {
 			isa = PBXGroup;
 			children = (
+				E72F4696214CADA200ECF968 /* Services */,
 				E7DDDA37214B50EC00CE119A /* AppDelegate.swift */,
 				E7DDDA39214B50EC00CE119A /* ViewController.swift */,
 				E7DDDA3B214B50EC00CE119A /* Main.storyboard */,
@@ -301,10 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jasy/Pods-Jasy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireLogging/AlamofireLogging.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -313,9 +324,9 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireLogging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -333,15 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JasyUITests-checkManifestLockResult.txt",
 			);
@@ -355,15 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JasyTests-checkManifestLockResult.txt",
 			);
@@ -377,15 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Jasy-checkManifestLockResult.txt",
 			);
@@ -403,6 +402,7 @@
 			files = (
 				E7DDDA3A214B50EC00CE119A /* ViewController.swift in Sources */,
 				E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */,
+				E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
