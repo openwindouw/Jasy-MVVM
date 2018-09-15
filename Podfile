@@ -13,6 +13,9 @@ target 'Jasy' do
   pod 'NVActivityIndicatorView'
   pod 'SnapKit', '~> 4.0'
   pod 'Firebase/Messaging'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireLogging', '~> 1.0'
+  
   target 'JasyTests' do
     inherit! :search_paths
     # Pods for testing
