@@ -15,6 +15,7 @@ target 'Jasy' do
   pod 'Firebase/Messaging'
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireLogging', '~> 1.0'
+  pod 'R.swift'
   
   target 'JasyTests' do
     inherit! :search_paths

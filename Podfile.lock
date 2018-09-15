@@ -55,6 +55,7 @@ DEPENDENCIES:
   - Firebase (~> 4.8)
   - Firebase/Messaging
   - NVActivityIndicatorView
+  - R.swift
   - R.swift (~> 4.0)
   - SnapKit (~> 4.0)
 
@@ -95,6 +96,6 @@ SPEC CHECKSUMS:
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: f9da0ca047eaee7bc0b5705e1058ed461b0f6645
+PODFILE CHECKSUM: adbabe06e54c23846e8384d0434e228f41720cc4
 
 COCOAPODS: 1.5.3
