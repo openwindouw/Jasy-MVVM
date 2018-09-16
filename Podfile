@@ -6,7 +6,7 @@ target 'Jasy' do
   use_frameworks!
 
   # Pods for Jasy
-    pod 'Firebase', '~> 4.8'
+  pod 'Firebase', '~> 4.8'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'R.swift', '~> 4.0'
@@ -15,11 +15,14 @@ target 'Jasy' do
   pod 'Firebase/Messaging'
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireLogging', '~> 1.0'
-  pod 'R.swift'
+  pod 'RxSwift', '~> 4.2'
+  pod 'RxCocoa', '~> 4.2'
   
   target 'JasyTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
   end
 
   target 'JasyUITests' do
