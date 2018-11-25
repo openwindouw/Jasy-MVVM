@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
+		CEB3AAA221AA250900406AE8 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAA121AA250900406AE8 /* CustomLayout.swift */; };
+		CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */; };
+		CEB3AAA621AA29A800406AE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */; };
+		CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */; };
 		E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4697214CADF200ECF968 /* NasaClient.swift */; };
 		E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469B214CAF4000ECF968 /* ListViewController.swift */; };
 		E72F469F214CB08500ECF968 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469E214CB08500ECF968 /* R.generated.swift */; };
@@ -55,6 +59,10 @@
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
 		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CEB3AAA121AA250900406AE8 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E72F4697214CADF200ECF968 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		E72F469B214CAF4000ECF968 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E72F469E214CB08500ECF968 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +138,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEB3AAA021AA24F700406AE8 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3AAA121AA250900406AE8 /* CustomLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		CEB3AAA721AA2AA500406AE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E72F4696214CADA200ECF968 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +174,7 @@
 		E72F469A214CAF1E00ECF968 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */,
 				E72F469B214CAF4000ECF968 /* ListViewController.swift */,
 			);
 			path = View;
@@ -198,7 +223,9 @@
 		E7DDDA36214B50EC00CE119A /* Jasy */ = {
 			isa = PBXGroup;
 			children = (
+				CEB3AAA721AA2AA500406AE8 /* ViewModel */,
 				E7C23891214E0103005E5202 /* Model */,
+				CEB3AAA021AA24F700406AE8 /* Layout */,
 				E72F46A0214CB0C900ECF968 /* Scene */,
 				E72F469A214CAF1E00ECF968 /* View */,
 				E72F4699214CAEEA00ECF968 /* Storyboards */,
@@ -210,6 +237,7 @@
 				E7DDDA43214B50ED00CE119A /* Info.plist */,
 				E7C23894214E042A005E5202 /* Constants.swift */,
 				E7C23896214E0472005E5202 /* Utils.swift */,
+				CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */,
 			);
 			path = Jasy;
 			sourceTree = "<group>";
@@ -343,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DDDA42214B50ED00CE119A /* LaunchScreen.storyboard in Resources */,
+				CEB3AAA621AA29A800406AE8 /* GoogleService-Info.plist in Resources */,
 				E7DDDA3F214B50ED00CE119A /* Assets.xcassets in Resources */,
 				E7DDDA3D214B50EC00CE119A /* Main.storyboard in Resources */,
 			);
@@ -374,11 +403,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jasy/Pods-Jasy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireLogging/AlamofireLogging.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -387,11 +418,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireLogging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -499,11 +532,14 @@
 			files = (
 				E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
+				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
 				E7C2388E214DFF52005E5202 /* ApodScene.swift in Sources */,
 				E7C23893214E0110005E5202 /* ApodModel.swift in Sources */,
 				E72F46A2214CB0E600ECF968 /* SceneCoordinator.swift in Sources */,
 				E7C23895214E042A005E5202 /* Constants.swift in Sources */,
+				CEB3AAA221AA250900406AE8 /* CustomLayout.swift in Sources */,
 				E7C2388C214DFF10005E5202 /* Scene.swift in Sources */,
+				CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */,
 				E7C23897214E0472005E5202 /* Utils.swift in Sources */,
 				E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */,
 				E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */,
@@ -681,6 +717,7 @@
 			baseConfigurationReference = 7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = Jasy/Info.plist;
@@ -690,6 +727,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -700,6 +738,7 @@
 			baseConfigurationReference = 9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = Jasy/Info.plist;
@@ -709,6 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

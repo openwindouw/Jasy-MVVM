@@ -17,6 +17,7 @@ target 'Jasy' do
   pod 'AlamofireLogging', '~> 1.0'
   pod 'RxSwift', '~> 4.2'
   pod 'RxCocoa', '~> 4.2'
+  pod 'RxDataSources', '~> 3.1'
   
   target 'JasyTests' do
     inherit! :search_paths

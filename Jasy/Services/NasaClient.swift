@@ -42,7 +42,7 @@ class NASAClient {
     static func request<T: Codable>(verb: HTTPMethod = .get, url: String, parameters: [String: AnyObject] = [:], headers: [String: String] = [:], encoding: Encoding = .default) -> Observable<Result<T>> {
         return Observable.create { observable in
             
-            let request = SUDSessionManager.shared.request(url,
+            let request = JSessionManager.shared.request(url,
                                                            method: verb,
                                                            parameters: parameters,
                                                            encoding: encoding.alamofire,
@@ -76,12 +76,12 @@ class NASAClient {
     }
 }
 
-class SUDSessionManager: SessionManager {
-    static let shared: SUDSessionManager = {
+class JSessionManager: SessionManager {
+    static let shared: JSessionManager = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 60
         configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        let manager = SUDSessionManager(configuration: configuration)
+        let manager = JSessionManager(configuration: configuration)
         return manager
     }()
 }

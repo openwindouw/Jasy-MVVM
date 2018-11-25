@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct ApodModel: Codable {
     let copyright: String?
@@ -17,4 +18,16 @@ struct ApodModel: Codable {
     let serviceVersion: String?
     let title: String?
     let url: String?
+}
+
+extension ApodModel: IdentifiableType {
+    var identity: String {
+        return date!
+    }
+}
+
+extension ApodModel: Equatable {
+    static func == (lhs: ApodModel, rhs: ApodModel) -> Bool {
+        return lhs.date == rhs.date
+    }
 }
