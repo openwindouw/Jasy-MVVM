@@ -25,8 +25,11 @@ struct ListViewModel {
     }
     
     func transform() -> Output {
+        //Just for testing purpose
+        let startOfMonth = Date().startOfMonth()
+        let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
         
-        let sections = self.apodService.getApod(start: "", end: "")
+        let sections = self.apodService.getApod(start: formattedStartOfTheMonth, end: Date.formattedToday)
             .flatMapLatest { result -> Observable<[Section]> in
                 switch result {
                 case .success(let value):

@@ -9,6 +9,12 @@
 import Foundation
 
 
-class Utils {
-
+struct Utils {
+    private init() {}
+    
+    static func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            updates()
+        }
+    }
 }

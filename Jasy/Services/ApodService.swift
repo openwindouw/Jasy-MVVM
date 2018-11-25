@@ -19,10 +19,10 @@ struct ApodService: ApodServiceProtocol {
         let parameters: JDictionary = [
             "start_date" : start,
             "end_date" : end,
-            "api_key" : ClientConstants.apiKey
+            "api_key" : NasaConstants.apiKey
         ] as [String: AnyObject]
         
-        let endpoint = ClientConstants.base + "/planetary/apod"
+        let endpoint = NasaConstants.base + "/planetary/apod"
         
         return NASAClient.request(verb: .get, url: endpoint, parameters: parameters, encoding: .query)
             .retry(3)

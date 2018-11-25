@@ -40,7 +40,7 @@ class CustomLayout: UICollectionViewLayout {
     weak var delegate: CustomLayoutDelegate!
     
     //2. Configurable properties
-    fileprivate var numberOfColumns = 2
+    fileprivate var numberOfColumns = 3
     fileprivate var cellPadding: CGFloat = 6
     
     //3. Array to keep a cache of attributes.
@@ -76,6 +76,8 @@ class CustomLayout: UICollectionViewLayout {
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
         // 3. Iterates through the list of items in the first section
+        guard collectionView.numberOfSections > 0 else { return }
+        
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             
             let indexPath = IndexPath(item: item, section: 0)

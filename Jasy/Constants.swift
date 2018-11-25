@@ -6,16 +6,15 @@
 //  Copyright © 2018 Vladimir Espinola. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct ClientConstants {
-    // MARK: API Key
-    static let apiKey = "j3QsWa596qx2WxAMvZtxJAM4oH55JiV9mbIxO2Ng"
-    
-    // MARK: URLs
-    static let apiScheme = "https"
-    static let apiHost = "api.nasa.gov"
-    static let apiPath = "/planetary/apod"
-    
-    static let base = "https://api.nasa.gov"
+struct JUserDefaultsKeys {
+    static let currentMonth = "current_month"
+}
+
+
+struct JMetric {
+    static let cornerRadius: CGFloat = 6
+    static let borderWidth: CGFloat = 1
+    static let standardMinSpace: CGFloat = 8
 }
