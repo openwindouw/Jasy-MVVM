@@ -18,6 +18,7 @@ target 'Jasy' do
   pod 'RxSwift', '~> 4.2'
   pod 'RxCocoa', '~> 4.2'
   pod 'RxDataSources', '~> 3.1'
+  pod 'RxRealmDataSources', '~> 0.2'
   
   target 'JasyTests' do
     inherit! :search_paths

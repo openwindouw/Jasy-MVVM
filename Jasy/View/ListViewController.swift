@@ -12,6 +12,7 @@ import RxDataSources
 
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+
     private var dataSource: RxCollectionViewSectionedAnimatedDataSource<Section>!
     private var viewModel: ListViewModel!
     
@@ -32,6 +33,8 @@ class ListViewController: UIViewController {
     }
     
     private func configure() {
+        title = "APOD"
+        
         collectionView?.backgroundColor = UIColor.clear
         collectionView?.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
         
@@ -41,17 +44,9 @@ class ListViewController: UIViewController {
             navigationItem.searchController = searchController
 
             if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-
-                //textfield.textColor = // Set text color
                 if let backgroundview = textfield.subviews.first {
-
-                    // Background color
-                    backgroundview.backgroundColor = UIColor.white
-
-                    // Rounded corner
                     backgroundview.layer.cornerRadius = 10
                     backgroundview.clipsToBounds = true
-
                 }
             }
 
@@ -109,7 +104,7 @@ extension ListViewController: UISearchResultsUpdating {
             return
         }
         
-        sortedValues = filter(list: values ?? [], with: query)
+        sortedValues = filter(list: values ?? dataSource[0].items, with: query)
         collectionView.reloadData()
     }
 }
@@ -123,9 +118,8 @@ extension ListViewController: UISearchBarDelegate {
 
 extension ListViewController : CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        
-        let lower : UInt32 = 100
-        let upper : UInt32 = 180
+        let lower : UInt32 = 80
+        let upper : UInt32 = 200
         let randomNumber = arc4random_uniform(upper - lower) + lower
         
         return CGFloat(randomNumber)
@@ -179,7 +173,7 @@ extension ListViewController {
     private func addTitleView(){
         let button = UIButton(type: .custom)
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("APODS", for: .normal)
+        button.setTitle("APOD", for: .normal)
 //        button.titleLabel?.font = .sud_dinRoundPro20
         button.addTarget(self, action: #selector(searchBarButtonAction), for: .touchUpInside)
         navigationItem.titleView = button

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tDh-3I-Qn6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="AAX-q7-FxD" customClass="CustomLayout" customModule="Jasy" customModuleProvider="target"/>
                                 <cells>
@@ -89,7 +89,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tDh-3I-Qn6" secondAttribute="trailing" id="0dp-yz-jWD"/>
                             <constraint firstItem="tDh-3I-Qn6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TmM-KI-Ots"/>
                             <constraint firstItem="tDh-3I-Qn6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZuC-ZU-ZDf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tDh-3I-Qn6" secondAttribute="bottom" id="xgd-EP-cVg"/>
+                            <constraint firstAttribute="bottom" secondItem="tDh-3I-Qn6" secondAttribute="bottom" id="xgd-EP-cVg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -122,8 +122,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UBa-hS-0Mr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ER-dX-iU0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="3ER-dX-iU0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

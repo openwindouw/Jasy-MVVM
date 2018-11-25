@@ -22,6 +22,6 @@ extension UIColor {
     }
     
     static var primary: UIColor {
-        return UIColor(netHex: 0x007AFF)
+        return UIColor(netHex: 0x00397E)
     }
 }
