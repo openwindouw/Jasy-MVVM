@@ -23,13 +23,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="AAX-q7-FxD" customClass="CustomLayout" customModule="Jasy" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Efu-PF-yhS">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureCellID" id="Efu-PF-yhS" customClass="PictureCollectionViewCell" customModule="Jasy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <size key="customSize" width="162" height="147"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
