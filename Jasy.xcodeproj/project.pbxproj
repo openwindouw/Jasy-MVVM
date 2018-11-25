@@ -13,6 +13,8 @@
 		CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */; };
 		CEB3AAA621AA29A800406AE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */; };
 		CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */; };
+		CEB3AAAB21AA324200406AE8 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAAA21AA324200406AE8 /* Observable+Ext.swift */; };
+		CEB3AAAD21AA324A00406AE8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3AAAC21AA324A00406AE8 /* ActivityIndicator.swift */; };
 		E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4697214CADF200ECF968 /* NasaClient.swift */; };
 		E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469B214CAF4000ECF968 /* ListViewController.swift */; };
 		E72F469F214CB08500ECF968 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469E214CB08500ECF968 /* R.generated.swift */; };
@@ -63,6 +65,8 @@
 		CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		CEB3AAAA21AA324200406AE8 /* Observable+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		CEB3AAAC21AA324A00406AE8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E72F4697214CADF200ECF968 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		E72F469B214CAF4000ECF968 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E72F469E214CB08500ECF968 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -154,6 +158,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CEB3AAAE21AA325700406AE8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3AAAC21AA324A00406AE8 /* ActivityIndicator.swift */,
+				CEB3AAAA21AA324200406AE8 /* Observable+Ext.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E72F4696214CADA200ECF968 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +243,7 @@
 				E72F469A214CAF1E00ECF968 /* View */,
 				E72F4699214CAEEA00ECF968 /* Storyboards */,
 				E72F4696214CADA200ECF968 /* Services */,
+				CEB3AAAE21AA325700406AE8 /* Supporting Files */,
 				E7DDDA37214B50EC00CE119A /* AppDelegate.swift */,
 				E7DDDA3E214B50ED00CE119A /* Assets.xcassets */,
 				E72F469E214CB08500ECF968 /* R.generated.swift */,
@@ -534,6 +548,7 @@
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
 				E7C2388E214DFF52005E5202 /* ApodScene.swift in Sources */,
+				CEB3AAAB21AA324200406AE8 /* Observable+Ext.swift in Sources */,
 				E7C23893214E0110005E5202 /* ApodModel.swift in Sources */,
 				E72F46A2214CB0E600ECF968 /* SceneCoordinator.swift in Sources */,
 				E7C23895214E042A005E5202 /* Constants.swift in Sources */,
@@ -541,6 +556,7 @@
 				E7C2388C214DFF10005E5202 /* Scene.swift in Sources */,
 				CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */,
 				E7C23897214E0472005E5202 /* Utils.swift in Sources */,
+				CEB3AAAD21AA324A00406AE8 /* ActivityIndicator.swift in Sources */,
 				E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */,
 				E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */,
 				E72F469F214CB08500ECF968 /* R.generated.swift in Sources */,
@@ -725,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -746,7 +762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
