@@ -9,16 +9,16 @@ target 'Jasy' do
   pod 'Firebase', '~> 4.8'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'R.swift', '~> 4.0'
-  pod 'NVActivityIndicatorView'
-  pod 'SnapKit', '~> 4.0'
+  pod 'R.swift', '~> 5.0'
+  pod 'SnapKit', '~> 4.2'
   pod 'Firebase/Messaging'
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireLogging', '~> 1.0'
-  pod 'RxSwift', '~> 4.2'
-  pod 'RxCocoa', '~> 4.2'
+  pod 'RxSwift', '~> 4.4'
+  pod 'RxCocoa', '~> 4.4'
   pod 'RxDataSources', '~> 3.1'
   pod 'RxRealmDataSources', '~> 0.2'
+  pod 'RxNuke'
   
   target 'JasyTests' do
     inherit! :search_paths

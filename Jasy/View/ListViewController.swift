@@ -32,6 +32,11 @@ class ListViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewDidLayoutSubviews() {
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.viewDidLayoutSubviews()
+    }
+    
     private func configure() {
         title = "APOD"
         
@@ -75,10 +80,6 @@ class ListViewController: UIViewController {
             cell.configure(for: item)
             return cell
         })
-        
-        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
-            layout.delegate = self
-        }
     }
     
     private func bindViewModel() {
@@ -114,17 +115,6 @@ extension ListViewController: UISearchBarDelegate {
         guard searchBarButtonItem != nil else { return }
         hideSearch()
     }
-}
-
-extension ListViewController : CustomLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let lower : UInt32 = 80
-        let upper : UInt32 = 200
-        let randomNumber = arc4random_uniform(upper - lower) + lower
-        
-        return CGFloat(randomNumber)
-    }
-    
 }
 
 extension ListViewController {
@@ -174,7 +164,6 @@ extension ListViewController {
         let button = UIButton(type: .custom)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("APOD", for: .normal)
-//        button.titleLabel?.font = .sud_dinRoundPro20
         button.addTarget(self, action: #selector(searchBarButtonAction), for: .touchUpInside)
         navigationItem.titleView = button
     }

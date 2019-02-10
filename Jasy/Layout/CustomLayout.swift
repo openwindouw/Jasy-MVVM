@@ -83,8 +83,8 @@ class CustomLayout: UICollectionViewLayout {
             let indexPath = IndexPath(item: item, section: 0)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
-            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
-            let height = cellPadding * 2 + photoHeight
+//            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
+            let height = columnWidth * 1.1//cellPadding * 2 + photoHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
@@ -116,6 +116,13 @@ class CustomLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
+    }
+    
+    override func invalidateLayout() {
+        super.invalidateLayout()
+        
+        cache.removeAll()
+        contentHeight = .leastNormalMagnitude
     }
     
 }

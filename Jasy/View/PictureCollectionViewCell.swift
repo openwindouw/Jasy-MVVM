@@ -8,13 +8,14 @@
 
 import UIKit
 import RxSwift
-import NVActivityIndicatorView
+import RxNuke
+import Nuke
 
 class PictureCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
+//    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     
     var disposeBag = DisposeBag()
     
@@ -36,9 +37,9 @@ class PictureCollectionViewCell: UICollectionViewCell {
         picture.contentMode = .scaleAspectFill
         
         picture.layer.masksToBounds = true
-        activityIndicator.type = .lineScalePulseOutRapid
-        activityIndicator.padding = 30
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+//        activityIndicator.type = .lineScalePulseOutRapid
+//        activityIndicator.padding = 30
+//        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
     }
     
     func configure(for apod: ApodModel) {
@@ -48,16 +49,8 @@ class PictureCollectionViewCell: UICollectionViewCell {
         guard let urlString = apod.url else { return }
         guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.rx
-            .response(request: URLRequest(url: url))
-            .asDriverOnErrorJustComplete()
-            .drive(onNext: { [weak self] response, data in
-                self?.picture.image = UIImage(data: data)
-            }, onCompleted: {
-                UIView.animate(withDuration: 0.3) { [weak self] in
-                    self?.picture.alpha = 1
-                }
-            })
+        ImagePipeline.shared.rx.loadImage(with: url)
+            .subscribe(onSuccess: { self.picture.image = $0.image })
             .disposed(by: disposeBag)
         
     }
@@ -66,30 +59,31 @@ class PictureCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         disposeBag = DisposeBag()
+        
         picture.image = nil
         titleLabel.isHidden = false
         dateLabel.isHidden = false
-        activityIndicator.isHidden = true
+//        activityIndicator.isHidden = true
     }
 }
 
-extension PictureCollectionViewCell {
-    func showActivityIndicator() {
-        if !activityIndicator.isAnimating {
-            Utils.performUIUpdatesOnMain {
-                self.activityIndicator.startAnimating()
-            }
-        }
-        
-    }
-    
-    func hideActivityIndicator() {
-        Utils.performUIUpdatesOnMain {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
-        }
-    }
-}
+//extension PictureCollectionViewCell {
+//    func showActivityIndicator() {
+//        if !activityIndicator.isAnimating {
+//            Utils.performUIUpdatesOnMain {
+//                self.activityIndicator.startAnimating()
+//            }
+//        }
+//        
+//    }
+//    
+//    func hideActivityIndicator() {
+//        Utils.performUIUpdatesOnMain {
+//            self.activityIndicator.stopAnimating()
+//            self.activityIndicator.isHidden = true
+//        }
+//    }
+//}
 
 
 
