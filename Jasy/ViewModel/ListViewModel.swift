@@ -40,7 +40,7 @@ struct ListViewModel {
                 case .success(let value):
                     
                     guard let searchText = searchText, !searchText.isEmpty else {
-                        return .just([Section(model: "", items: value)])
+                        return .just([Section(model: "", items: value.sorted(by: { $0.date > $1.date }))])
                     }
                     
                     let parts = searchText.components(separatedBy: " ").filter { !$0.isEmpty }
@@ -48,8 +48,8 @@ struct ListViewModel {
                     let result = value.filter { currentApod in
                         let matches = parts.filter { part in
                             let part = part.lowercased()
-                            let result = currentApod.title?.lowercased().contains(part) ?? false
-                                || currentApod.date?.contains(part) ?? false
+                            let result = currentApod.title.lowercased().contains(part)
+                                || currentApod.date.contains(part)
                             
                             return result
                         }
@@ -57,7 +57,9 @@ struct ListViewModel {
                         return matches.count == parts.count
                     }
                     
-                    return .just([Section(model: "", items: result)])
+                    let sorted = result.sorted(by: { $0.date > $1.date })
+                    
+                    return .just([Section(model: "", items: sorted)])
                 case .failure(_):
                     return .just([])
                 }

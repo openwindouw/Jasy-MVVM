@@ -11,18 +11,18 @@ import RxDataSources
 
 struct ApodModel: Codable {
     let copyright: String?
-    let date: String?
-    let explanation: String?
+    let date: String
+    let explanation: String
     let hdurl: String?
     let mediaType: String?
     let serviceVersion: String?
-    let title: String?
+    let title: String
     let url: String?
 }
 
 extension ApodModel: IdentifiableType {
     var identity: String {
-        return date!
+        return date
     }
 }
 

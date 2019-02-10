@@ -73,13 +73,13 @@ class ApodViewController: UIViewController {
         let centerAlignmentStype = NSMutableParagraphStyle()
         centerAlignmentStype.alignment = .center
         
-        titleAttributedString.append(NSMutableAttributedString(string: apod.title!, attributes: [
+        titleAttributedString.append(NSMutableAttributedString(string: apod.title, attributes: [
             NSAttributedString.Key.font             : UIFont.helveticaNeueBold21,
             NSAttributedString.Key.foregroundColor  : UIColor.white,
             NSAttributedString.Key.paragraphStyle   : centerAlignmentStype
         ]))
         
-        titleAttributedString.append(NSMutableAttributedString(string: "\n\n\(apod.explanation!)", attributes: [
+        titleAttributedString.append(NSMutableAttributedString(string: "\n\n\(apod.explanation)", attributes: [
             NSAttributedString.Key.font             : UIFont.helveticaNeue14,
             NSAttributedString.Key.foregroundColor  : UIColor.white,
             NSAttributedString.Key.paragraphStyle   : leftAlignmentStype
@@ -129,7 +129,23 @@ class ApodViewController: UIViewController {
         shareButton.rx.tap
             .asDriver()
             .drive(onNext: { [unowned self] in
-                print(self.apod.explanation ?? "")
+                
+                var items: [Any] = [
+                    "\(self.apod.title):",
+                    self.apod.explanation
+                ]
+                
+                if let image = self.picture.image {
+                    items.append(image)
+                }
+                
+                if let highURL = self.apod.highURL {
+                    items.append(highURL)
+                } else if let lowURL = self.apod.lowURL {
+                    items.append(lowURL)
+                }
+                
+                Utilities.share(items: items, in: self)
             })
             .disposed(by: disposeBag)
     }
