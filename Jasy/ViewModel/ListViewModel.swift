@@ -33,7 +33,8 @@ struct ListViewModel {
         let startOfMonth = Date().startOfMonth()
         let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
         
-        let sections = Observable.combineLatest(self.apodService.getApod(start: formattedStartOfTheMonth, end: Date.formattedToday), input.searchObservable)
+        let sections = Observable
+            .combineLatest(self.apodService.getApod(start: formattedStartOfTheMonth, end: Date.formattedToday), input.searchObservable)
             .flatMapLatest { (result, searchText) -> Observable<[Section]> in
                 switch result {
                 case .success(let value):

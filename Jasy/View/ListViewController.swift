@@ -30,7 +30,6 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         configure()
         bindViewModel()
     }
@@ -71,8 +70,6 @@ class ListViewController: UIViewController {
         
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barTintColor = .white
-        
-//        searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -109,19 +106,6 @@ class ListViewController: UIViewController {
         showSearch()
     }
 }
-
-//extension ListViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        guard searchController.isActive, let query = self.searchController.searchBar.text?.trimmed, !query.isEmpty else {
-//            sortedValues = values
-//            collectionView.reloadData()
-//            return
-//        }
-//
-//        sortedValues = filter(list: values, with: query)
-//        collectionView.reloadData()
-//    }
-//}
 
 extension ListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

@@ -117,23 +117,55 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rt-c4-vT7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-hX-lg9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WqV-gK-uql">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="558.5"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32R-Nr-gHt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-hX-lg9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="top" secondItem="32R-Nr-gHt" secondAttribute="top" id="aR8-0J-b92"/>
+                                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="leading" secondItem="32R-Nr-gHt" secondAttribute="leading" id="gpy-Kf-His"/>
+                                                    <constraint firstAttribute="width" secondItem="32R-Nr-gHt" secondAttribute="height" multiplier="1:1" id="iWI-HS-V7A"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3fj-hX-lg9" secondAttribute="bottom" id="oDQ-1Y-xO4"/>
+                                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="centerY" secondItem="32R-Nr-gHt" secondAttribute="centerY" id="szh-Nl-Ibd"/>
+                                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="centerX" secondItem="32R-Nr-gHt" secondAttribute="centerX" id="tgJ-vB-OlQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3fj-hX-lg9" secondAttribute="trailing" id="zt0-Yu-vIN"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-On-RmZ">
+                                                <rect key="frame" x="0.0" y="375" width="375" height="183.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="32R-Nr-gHt" firstAttribute="width" secondItem="WqV-gK-uql" secondAttribute="width" id="Bs4-i4-KZQ"/>
+                                            <constraint firstItem="32R-Nr-gHt" firstAttribute="centerX" secondItem="WqV-gK-uql" secondAttribute="centerX" id="jYz-vb-Sja"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="centerY" secondItem="7rt-c4-vT7" secondAttribute="centerY" id="5kY-XC-5lH"/>
-                                    <constraint firstAttribute="trailing" secondItem="3fj-hX-lg9" secondAttribute="trailing" id="925-k8-psA"/>
-                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="centerX" secondItem="7rt-c4-vT7" secondAttribute="centerX" id="DU2-4d-Xp9"/>
-                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="top" secondItem="7rt-c4-vT7" secondAttribute="top" id="iDm-z3-YH3"/>
-                                    <constraint firstItem="3fj-hX-lg9" firstAttribute="leading" secondItem="7rt-c4-vT7" secondAttribute="leading" id="syP-6u-IFm"/>
-                                    <constraint firstAttribute="bottom" secondItem="3fj-hX-lg9" secondAttribute="bottom" id="y2h-35-MBt"/>
+                                    <constraint firstItem="WqV-gK-uql" firstAttribute="top" secondItem="7rt-c4-vT7" secondAttribute="top" id="IwE-8M-hRd"/>
+                                    <constraint firstAttribute="bottom" secondItem="WqV-gK-uql" secondAttribute="bottom" id="LTU-vR-sv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="WqV-gK-uql" secondAttribute="trailing" id="YCO-uM-zTe"/>
+                                    <constraint firstItem="WqV-gK-uql" firstAttribute="leading" secondItem="7rt-c4-vT7" secondAttribute="leading" id="Yl4-To-mcW"/>
+                                    <constraint firstItem="WqV-gK-uql" firstAttribute="centerX" secondItem="7rt-c4-vT7" secondAttribute="centerX" id="byH-uh-YY0"/>
+                                    <constraint firstItem="WqV-gK-uql" firstAttribute="width" secondItem="7rt-c4-vT7" secondAttribute="width" id="lFi-JM-ZDT"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7rt-c4-vT7" firstAttribute="width" secondItem="bWt-no-4WZ" secondAttribute="width" id="5nX-eg-PVF"/>
                             <constraint firstItem="7rt-c4-vT7" firstAttribute="top" secondItem="aT5-ei-lCM" secondAttribute="top" id="AEK-Iu-dpT"/>
                             <constraint firstAttribute="trailing" secondItem="7rt-c4-vT7" secondAttribute="trailing" id="DrN-Va-awD"/>
                             <constraint firstItem="7rt-c4-vT7" firstAttribute="leading" secondItem="bWt-no-4WZ" secondAttribute="leading" id="fIE-fj-Azg"/>
@@ -142,6 +174,8 @@
                         <viewLayoutGuide key="safeArea" id="aT5-ei-lCM"/>
                     </view>
                     <connections>
+                        <outlet property="explanationTextView" destination="Zuz-On-RmZ" id="jUb-bh-fWR"/>
+                        <outlet property="imageScrollView" destination="32R-Nr-gHt" id="JP1-0k-f5O"/>
                         <outlet property="picture" destination="3fj-hX-lg9" id="2sj-GA-blB"/>
                         <outlet property="scrollView" destination="7rt-c4-vT7" id="TxF-Yt-YXb"/>
                     </connections>

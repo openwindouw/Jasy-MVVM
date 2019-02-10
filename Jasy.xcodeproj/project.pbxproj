@@ -26,6 +26,8 @@
 		E72F469F214CB08500ECF968 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469E214CB08500ECF968 /* R.generated.swift */; };
 		E7BBF8CA22106EA300074AE8 /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8C922106EA300074AE8 /* ApodViewController.swift */; };
 		E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */; };
+		E7BBF8CE2210992F00074AE8 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */; };
+		E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */; };
 		E7C23890214DFF96005E5202 /* ApodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2388F214DFF96005E5202 /* ApodService.swift */; };
 		E7C23893214E0110005E5202 /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23892214E0110005E5202 /* ApodModel.swift */; };
 		E7C23895214E042A005E5202 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23894214E042A005E5202 /* Constants.swift */; };
@@ -82,6 +84,8 @@
 		E72F469E214CB08500ECF968 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E7BBF8C922106EA300074AE8 /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
 		E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
+		E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
+		E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Helpers.swift"; sourceTree = "<group>"; };
 		E7C2388F214DFF96005E5202 /* ApodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodService.swift; sourceTree = "<group>"; };
 		E7C23892214E0110005E5202 /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		E7C23894214E042A005E5202 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				CEA6490C21AB2B9F00149DC3 /* String+Helpers.swift */,
 				CEA6490E21AB2D2500149DC3 /* UIImage+Helpers.swift */,
 				CEA6491221AB2EC500149DC3 /* UIColor+Helpers.swift */,
+				E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */,
+				E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */,
 				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
+				E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
 				CEB3AAAB21AA324200406AE8 /* Observable+Ext.swift in Sources */,
@@ -593,6 +600,7 @@
 				CEB3AAA221AA250900406AE8 /* CustomLayout.swift in Sources */,
 				E7BBF8CA22106EA300074AE8 /* ApodViewController.swift in Sources */,
 				CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */,
+				E7BBF8CE2210992F00074AE8 /* UIButton+Helpers.swift in Sources */,
 				E7C23897214E0472005E5202 /* Utils.swift in Sources */,
 				CEB3AAAD21AA324A00406AE8 /* ActivityIndicator.swift in Sources */,
 				CEA6491321AB2EC500149DC3 /* UIColor+Helpers.swift in Sources */,
