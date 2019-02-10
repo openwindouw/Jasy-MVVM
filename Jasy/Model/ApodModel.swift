@@ -31,3 +31,15 @@ extension ApodModel: Equatable {
         return lhs.date == rhs.date
     }
 }
+
+extension ApodModel {
+    var highURL: URL? {
+        guard let hdurl = hdurl else { return nil }
+        return URL(string: hdurl)
+    }
+    
+    var lowURL: URL? {
+        guard let lowUrl = url else { return nil }
+        return URL(string: lowUrl)
+    }
+}

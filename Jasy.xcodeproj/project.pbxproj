@@ -24,11 +24,12 @@
 		E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4697214CADF200ECF968 /* NasaClient.swift */; };
 		E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469B214CAF4000ECF968 /* ListViewController.swift */; };
 		E72F469F214CB08500ECF968 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F469E214CB08500ECF968 /* R.generated.swift */; };
+		E7BBF8CA22106EA300074AE8 /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8C922106EA300074AE8 /* ApodViewController.swift */; };
+		E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */; };
 		E7C23890214DFF96005E5202 /* ApodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2388F214DFF96005E5202 /* ApodService.swift */; };
 		E7C23893214E0110005E5202 /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23892214E0110005E5202 /* ApodModel.swift */; };
 		E7C23895214E042A005E5202 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23894214E042A005E5202 /* Constants.swift */; };
 		E7C23897214E0472005E5202 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23896214E0472005E5202 /* Utils.swift */; };
-		E7C5D0A0220FB9F900630A47 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5D09F220FB9F900630A47 /* BottomSheetViewController.swift */; };
 		E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDDA37214B50EC00CE119A /* AppDelegate.swift */; };
 		E7DDDA3D214B50EC00CE119A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA3B214B50EC00CE119A /* Main.storyboard */; };
 		E7DDDA3F214B50ED00CE119A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DDDA3E214B50ED00CE119A /* Assets.xcassets */; };
@@ -79,11 +80,12 @@
 		E72F4697214CADF200ECF968 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		E72F469B214CAF4000ECF968 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E72F469E214CB08500ECF968 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E7BBF8C922106EA300074AE8 /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
+		E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
 		E7C2388F214DFF96005E5202 /* ApodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodService.swift; sourceTree = "<group>"; };
 		E7C23892214E0110005E5202 /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		E7C23894214E042A005E5202 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7C23896214E0472005E5202 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E7C5D09F220FB9F900630A47 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		E7DDDA34214B50EC00CE119A /* Jasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DDDA37214B50EC00CE119A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7DDDA3C214B50EC00CE119A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB3AAA821AA2ABA00406AE8 /* ListViewModel.swift */,
+				E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,11 +209,19 @@
 		E72F469A214CAF1E00ECF968 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */,
 				E72F469B214CAF4000ECF968 /* ListViewController.swift */,
-				E7C5D09F220FB9F900630A47 /* BottomSheetViewController.swift */,
+				E7BBF8C922106EA300074AE8 /* ApodViewController.swift */,
+				E7BBF8C822106E8C00074AE8 /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E7BBF8C822106E8C00074AE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3AAA321AA298200406AE8 /* PictureCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E7C23891214E0103005E5202 /* Model */ = {
@@ -571,6 +582,7 @@
 			files = (
 				E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */,
 				CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */,
+				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
@@ -579,10 +591,10 @@
 				E7C23895214E042A005E5202 /* Constants.swift in Sources */,
 				CEA6490F21AB2D2500149DC3 /* UIImage+Helpers.swift in Sources */,
 				CEB3AAA221AA250900406AE8 /* CustomLayout.swift in Sources */,
+				E7BBF8CA22106EA300074AE8 /* ApodViewController.swift in Sources */,
 				CEB3AAA421AA298200406AE8 /* PictureCollectionViewCell.swift in Sources */,
 				E7C23897214E0472005E5202 /* Utils.swift in Sources */,
 				CEB3AAAD21AA324A00406AE8 /* ActivityIndicator.swift in Sources */,
-				E7C5D0A0220FB9F900630A47 /* BottomSheetViewController.swift in Sources */,
 				CEA6491321AB2EC500149DC3 /* UIColor+Helpers.swift in Sources */,
 				CEA6490D21AB2B9F00149DC3 /* String+Helpers.swift in Sources */,
 				E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */,

@@ -84,7 +84,7 @@ class CustomLayout: UICollectionViewLayout {
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
 //            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
-            let height = columnWidth * 1.1//cellPadding * 2 + photoHeight
+            let height = columnWidth * 1.4//cellPadding * 2 + photoHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             

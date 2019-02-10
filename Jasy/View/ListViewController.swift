@@ -19,7 +19,10 @@ class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarButtonItem: UIBarButtonItem!
     
-    private var values: [ApodModel]!
+    private var values: [ApodModel]! {
+        return dataSource[0].items
+    }
+    
     private var sortedValues: [ApodModel]!
     
     private let disposeBag = DisposeBag()
@@ -69,7 +72,7 @@ class ListViewController: UIViewController {
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barTintColor = .white
         
-        searchController.searchResultsUpdater = self
+//        searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -85,10 +88,20 @@ class ListViewController: UIViewController {
     private func bindViewModel() {
         viewModel = ListViewModel(apodService: ApodService())
         
-        let output = viewModel.transform()
+        let input = ListViewModel.Input(searchObservable: searchController.searchBar.rx.text.asObservable())
+        
+        let output = viewModel.transform(with: input)
         
         output.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(ApodModel.self)
+            .subscribe(onNext: { [unowned self] apodModel in
+                let apodViewController = R.storyboard.main.apod()!
+                apodViewController.apod = apodModel
+                self.navigationController?.pushViewController(apodViewController, animated: true)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -97,18 +110,18 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard searchController.isActive, let query = self.searchController.searchBar.text?.trimmed, !query.isEmpty else {
-            sortedValues = values
-            collectionView.reloadData()
-            return
-        }
-        
-        sortedValues = filter(list: values ?? dataSource[0].items, with: query)
-        collectionView.reloadData()
-    }
-}
+//extension ListViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        guard searchController.isActive, let query = self.searchController.searchBar.text?.trimmed, !query.isEmpty else {
+//            sortedValues = values
+//            collectionView.reloadData()
+//            return
+//        }
+//
+//        sortedValues = filter(list: values, with: query)
+//        collectionView.reloadData()
+//    }
+//}
 
 extension ListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -118,25 +131,6 @@ extension ListViewController: UISearchBarDelegate {
 }
 
 extension ListViewController {
-    private func filter(list: [ApodModel], with query: String) -> [ApodModel] {
-        let parts = query.components(separatedBy: " ").filter { !$0.isEmpty }
-        
-        let result = list.filter { currentApod in
-            let matches = parts.filter { part in
-                let part = part.lowercased()
-                let result = currentApod.explanation?.lowercased().contains(part) ?? false
-                    || currentApod.title?.contains(part) ?? false
-                    || currentApod.date?.contains(part) ?? false
-                
-                return result
-            }
-            
-            return matches.count == parts.count
-        }
-        
-        return result
-    }
-    
     private func hideSearch() {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.navigationItem.titleView?.alpha = 0

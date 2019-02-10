@@ -34,3 +34,9 @@ extension ObservableType {
         return map { _ in }
     }
 }
+
+extension RxSwift.PrimitiveSequence {
+    public var orEmpty: Observable<Element> {
+        return self.asObservable().catchError { _ in .empty() }
+    }
+}
