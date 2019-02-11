@@ -18,4 +18,6 @@ struct NasaConstants {
     static let apiPath = "/planetary/apod"
     
     static let base = "https://api.nasa.gov"
+    
+    static let minimumStartingPoint = "1995-06-16"
 }

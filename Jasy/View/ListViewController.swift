@@ -19,9 +19,18 @@ class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarButtonItem: UIBarButtonItem!
     
-    private var values: [ApodModel]! {
+    private lazy var values: [ApodModel]! = {
         return dataSource[0].items
-    }
+    }()
+    
+    private lazy var calendarButton: UIBarButtonItem = {
+        let calendarImage = R.image.calendar()?
+            .withRenderingMode(.alwaysTemplate)
+            .resize(width: 23, heigth: 23)?
+            .tinted(with: .white)
+        
+        return UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: nil)
+    }()
     
     private var sortedValues: [ApodModel]!
     
@@ -45,8 +54,6 @@ class ListViewController: UIViewController {
         collectionView?.backgroundColor = UIColor.clear
         collectionView?.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
         
-        let searchImage = R.image.lupa()?.withRenderingMode(.alwaysTemplate).tinted(with: .white)
-        
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
 
@@ -64,6 +71,8 @@ class ListViewController: UIViewController {
             navigationItem.searchController = searchController
             navigationItem.hidesSearchBarWhenScrolling = true
         } else {
+            let searchImage = R.image.lupa()?.withRenderingMode(.alwaysTemplate).tinted(with: .white)
+            
             searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchBarButtonAction))
             navigationItem.rightBarButtonItem = searchBarButtonItem
         }
@@ -75,18 +84,20 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         
+        navigationItem.leftBarButtonItem = calendarButton
+    }
+    
+    private func bindViewModel() {
+        
         dataSource = RxCollectionViewSectionedAnimatedDataSource<Section>(configureCell: { dataSource, collectionView, indexPath, item -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.pictureCellID.identifier, for: indexPath) as! PictureCollectionViewCell
             cell.configure(for: item)
             return cell
         })
-    }
-    
-    private func bindViewModel() {
+        
         viewModel = ListViewModel(apodService: ApodService())
         
         let input = ListViewModel.Input(searchObservable: searchController.searchBar.rx.text.asObservable())
-        
         let output = viewModel.transform(with: input)
         
         output.sections
@@ -98,6 +109,14 @@ class ListViewController: UIViewController {
                 let apodViewController = R.storyboard.main.apod()!
                 apodViewController.apod = apodModel
                 self.navigationController?.pushViewController(apodViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        calendarButton.rx.tap.asDriver()
+            .throttle(0.3)
+            .drive(onNext: { [unowned self] in
+                let calendarViewController = R.storyboard.main.calendar()!
+                self.navigationController?.pushViewController(calendarViewController, animated: true)
             })
             .disposed(by: disposeBag)
     }
@@ -118,11 +137,11 @@ extension ListViewController {
     private func hideSearch() {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.navigationItem.titleView?.alpha = 0
-            }, completion: { [weak self] completed in
-                guard let strongSelf = self else { return }
-                strongSelf.addTitleView()
-                strongSelf.navigationItem.setHidesBackButton(false, animated: true)
-                strongSelf.navigationItem.setRightBarButton(strongSelf.searchBarButtonItem, animated: true)
+        }, completion: { [weak self] completed in
+            guard let strongSelf = self else { return }
+            strongSelf.addTitleView()
+            strongSelf.navigationItem.setHidesBackButton(false, animated: true)
+            strongSelf.navigationItem.setRightBarButton(strongSelf.searchBarButtonItem, animated: true)
         })
     }
     

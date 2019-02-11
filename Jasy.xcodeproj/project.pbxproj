@@ -28,6 +28,7 @@
 		E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */; };
 		E7BBF8CE2210992F00074AE8 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */; };
 		E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */; };
+		E7BBF8D22210FBAF00074AE8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF8D12210FBAF00074AE8 /* CalendarViewController.swift */; };
 		E7C23890214DFF96005E5202 /* ApodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2388F214DFF96005E5202 /* ApodService.swift */; };
 		E7C23893214E0110005E5202 /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23892214E0110005E5202 /* ApodModel.swift */; };
 		E7C23895214E042A005E5202 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C23894214E042A005E5202 /* Constants.swift */; };
@@ -86,6 +87,7 @@
 		E7BBF8CB2210868600074AE8 /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
 		E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Helpers.swift"; sourceTree = "<group>"; };
+		E7BBF8D12210FBAF00074AE8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E7C2388F214DFF96005E5202 /* ApodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodService.swift; sourceTree = "<group>"; };
 		E7C23892214E0110005E5202 /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		E7C23894214E042A005E5202 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				CEA6490721AAFB1A00149DC3 /* Extensions */,
 				CEB3AAAC21AA324A00406AE8 /* ActivityIndicator.swift */,
 				CEB3AAAA21AA324200406AE8 /* Observable+Ext.swift */,
+				E7C23896214E0472005E5202 /* Utilities.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			children = (
 				E72F469B214CAF4000ECF968 /* ListViewController.swift */,
 				E7BBF8C922106EA300074AE8 /* ApodViewController.swift */,
+				E7BBF8D12210FBAF00074AE8 /* CalendarViewController.swift */,
 				E7BBF8C822106E8C00074AE8 /* Cell */,
 			);
 			path = View;
@@ -275,7 +279,6 @@
 				E72F469E214CB08500ECF968 /* R.generated.swift */,
 				E7DDDA43214B50ED00CE119A /* Info.plist */,
 				E7C23894214E042A005E5202 /* Constants.swift */,
-				E7C23896214E0472005E5202 /* Utilities.swift */,
 				CEA6490A21AB287F00149DC3 /* LaunchScreen.storyboard */,
 				CEB3AAA521AA29A800406AE8 /* GoogleService-Info.plist */,
 			);
@@ -444,6 +447,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireLogging/AlamofireLogging.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -465,6 +469,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireLogging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -590,6 +595,7 @@
 				CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */,
 				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
+				E7BBF8D22210FBAF00074AE8 /* CalendarViewController.swift in Sources */,
 				E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
@@ -777,6 +783,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = Jasy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -798,6 +805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = Jasy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -19,6 +19,7 @@ target 'Jasy' do
   pod 'RxDataSources', '~> 3.1'
   pod 'RxRealmDataSources', '~> 0.2'
   pod 'RxNuke'
+  pod 'FSCalendar'
   
   target 'JasyTests' do
     inherit! :search_paths
