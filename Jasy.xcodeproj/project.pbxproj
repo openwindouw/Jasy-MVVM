@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
+		97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3A9902225EFAF001AF12B /* CalendarView.swift */; };
 		CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6490821AAFBA700149DC3 /* Date+Helpers.swift */; };
 		CEA6490B21AB287F00149DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA6490A21AB287F00149DC3 /* LaunchScreen.storyboard */; };
 		CEA6490D21AB2B9F00149DC3 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6490C21AB2B9F00149DC3 /* String+Helpers.swift */; };
@@ -66,6 +67,7 @@
 		78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.debug.xcconfig"; sourceTree = "<group>"; };
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		97C3A9902225EFAF001AF12B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
 		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA6490821AAFBA700149DC3 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		97C3A98F2225EF9A001AF12B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				97C3A9902225EFAF001AF12B /* CalendarView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CEA6490721AAFB1A00149DC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 				E72F469B214CAF4000ECF968 /* ListViewController.swift */,
 				E7BBF8C922106EA300074AE8 /* ApodViewController.swift */,
 				E7BBF8D12210FBAF00074AE8 /* CalendarViewController.swift */,
+				97C3A98F2225EF9A001AF12B /* Common */,
 				E7BBF8C822106E8C00074AE8 /* Cell */,
 			);
 			path = View;
@@ -578,7 +589,7 @@
 				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -593,6 +604,7 @@
 			files = (
 				E7DDDA38214B50EC00CE119A /* AppDelegate.swift in Sources */,
 				CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */,
+				97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */,
 				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
 				E7BBF8D22210FBAF00074AE8 /* CalendarViewController.swift in Sources */,
