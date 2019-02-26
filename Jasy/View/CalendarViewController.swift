@@ -11,6 +11,7 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var yearTextField: UITextField!
     
     // first date in the range
     private var firstDate: Date?
@@ -25,9 +26,10 @@ class CalendarViewController: UIViewController {
         
         calendar.delegate = self
         calendar.dataSource = self
-        
         calendar.allowsMultipleSelection = true
         
+        
+        yearTextField.text = calendar.currentPage.formattedDate
     }
 }
 
