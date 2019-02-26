@@ -19,6 +19,12 @@ class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarButtonItem: UIBarButtonItem!
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView()
+        activity.tintColor = .primary
+        return activity
+    }()
+    
     private lazy var values: [ApodModel]! = {
         return dataSource[0].items
     }()
@@ -85,6 +91,8 @@ class ListViewController: UIViewController {
         definesPresentationContext = true
         
         navigationItem.leftBarButtonItem = calendarButton
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
     }
     
     private func bindViewModel() {
@@ -118,6 +126,10 @@ class ListViewController: UIViewController {
                 let calendarViewController = R.storyboard.main.calendar()!
                 self.navigationController?.pushViewController(calendarViewController, animated: true)
             })
+            .disposed(by: disposeBag)
+        
+        output.fetching
+            .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
     }
     

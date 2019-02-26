@@ -22,6 +22,7 @@ struct ListViewModel {
     
     struct Output {
         var sections: Observable<[Section]>
+        var fetching: Driver<Bool>
     }
     
     init(apodService: ApodServiceProtocol) {
@@ -29,12 +30,15 @@ struct ListViewModel {
     }
     
     func transform(with input: Input) -> Output {
+        let activityIndicator = ActivityIndicator()
+        
         //Just for testing purpose
         let startOfMonth = Date().startOfMonth()
         let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
         
         let sections = Observable
             .combineLatest(self.apodService.getApod(start: formattedStartOfTheMonth, end: Date.formattedToday), input.searchObservable)
+            .trackActivity(activityIndicator)
             .flatMapLatest { (result, searchText) -> Observable<[Section]> in
                 switch result {
                 case .success(let value):
@@ -65,6 +69,6 @@ struct ListViewModel {
                 }
             }
         
-        return Output(sections: sections)
+        return Output(sections: sections, fetching: activityIndicator.asDriver())
     }
 }
