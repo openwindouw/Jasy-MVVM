@@ -39,4 +39,19 @@ struct Utilities {
         
         viewController.present(activityViewController, animated: true, completion: nil)
     }
+    
+    static func convert(currentDate: String, in currentFormat: String = DateFormats.year, to newFormat: String = DateFormats.default) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = currentFormat
+        guard let date = dateFormatter.date(from: currentDate) else { return "" }
+        dateFormatter.dateFormat = newFormat
+        return  dateFormatter.string(from: date)
+    }
+    
+    static func getDate(from currentDate: String, currentFormat: String = DateFormats.default) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = currentFormat
+        
+        return dateFormatter.date(from: currentDate)
+    }
 }

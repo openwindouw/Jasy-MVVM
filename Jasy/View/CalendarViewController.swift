@@ -8,6 +8,9 @@
 
 import UIKit
 import FSCalendar
+import RxSwift
+
+typealias CalendarSelection = (start: Date, end: Date)
 
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
@@ -17,6 +20,14 @@ class CalendarViewController: UIViewController {
     private var firstDate: Date?
     // last date in the range
     private var lastDate: Date?
+    
+    private var disposeBag = DisposeBag()
+    
+    private var _selectedYearsSubject = PublishSubject<CalendarSelection>()
+    
+    var selectedYearsObservable: Observable<CalendarSelection>? {
+        return _selectedYearsSubject.asObservable()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +39,23 @@ class CalendarViewController: UIViewController {
         calendar.dataSource = self
         calendar.allowsMultipleSelection = true
         
+        yearTextField.text = calendar.currentPage.yearFormat
+        yearTextField.keyboardType = .numberPad
+        yearTextField.placeholder = "Year"
+        yearTextField.addDoneButton() { [unowned self] in self.dateDidEndEditing() }
+        yearTextField.rightViewMode = .always
         
-        yearTextField.text = calendar.currentPage.formattedDate
+        let rightView = UIView(frame: CGRect(x: JMetric.standardMinSpace, y: JMetric.standardMinSpace, width: 44, height: 44))
+        
+        let editImage = R.image.edit()!
+            .withRenderingMode(.alwaysTemplate)
+            .tinted(with: .primary)
+        
+        let editImageView = UIImageView(image: editImage)
+        editImageView.frame = CGRect(x: JMetric.standardMinSpace, y: JMetric.standardMinSpace, width: 30, height: 30)
+        rightView.addSubview(editImageView)
+        
+        yearTextField.rightView = rightView
     }
 }
 
@@ -38,28 +64,17 @@ extension CalendarViewController: FSCalendarDelegate {
         // nothing selected:
         if firstDate == nil {
             firstDate = date
-            
-            return
-        }
-        
-        // only first date is selected:
-        if firstDate != nil && lastDate == nil {
+        } else if lastDate == nil { // only first date is selected:
             // handle the case of if the last date is less than the first date:
             if date <= firstDate! {
-                calendar.deselect(firstDate!)
+                lastDate = firstDate
                 firstDate = date
-                return
+            } else {
+                lastDate = date
             }
             
-            return
-        }
-        
-        // both are selected:
-        if firstDate != nil && lastDate != nil {
-            
-            lastDate = nil
-            firstDate = nil
-        
+            _selectedYearsSubject.onNext(CalendarSelection(start: firstDate!, end: lastDate!))
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -75,7 +90,7 @@ extension CalendarViewController: FSCalendarDelegate {
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("adio")
+        yearTextField.text = calendar.currentPage.yearFormat
     }
 }
 
@@ -86,5 +101,29 @@ extension CalendarViewController: FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
         return Date(from: NasaConstants.minimumStartingPoint)
+    }
+}
+
+extension CalendarViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        dateDidEndEditing()
+    }
+}
+
+extension CalendarViewController {
+    private func dateDidEndEditing() {
+        guard let dateString = yearTextField.text else { return }
+        guard var date = Utilities.getDate(from: dateString, currentFormat: DateFormats.year) else { return }
+        
+        if let minimunDate = Utilities.getDate(from: NasaConstants.minimumStartingPoint), date < minimunDate {
+            date = minimunDate
+        } else if date > Date() {
+            date = Date()
+        }
+        yearTextField.text = date.yearFormat
+        calendar.setCurrentPage(date, animated: true)
+        
+        firstDate = nil
+        lastDate = nil
     }
 }

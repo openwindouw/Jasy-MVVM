@@ -32,6 +32,12 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    var yearFormat: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
     func startOfMonth() -> Date? {
         let comp: DateComponents = Calendar.current.dateComponents([.year, .month, .hour], from: Calendar.current.startOfDay(for: self))
         return Calendar.current.date(from: comp)!

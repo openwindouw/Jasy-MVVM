@@ -11,6 +11,8 @@
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
 		9725D9B12240047700BFBC35 /* JFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B02240047700BFBC35 /* JFileManager.swift */; };
 		9725D9B322400D9400BFBC35 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B222400D9400BFBC35 /* URL+Helpers.swift */; };
+		9725D9B52240292200BFBC35 /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B42240292200BFBC35 /* UITextField+Helpers.swift */; };
+		9725D9B72240295F00BFBC35 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B62240295F00BFBC35 /* BarButtonItem.swift */; };
 		97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3A9902225EFAF001AF12B /* CalendarView.swift */; };
 		CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6490821AAFBA700149DC3 /* Date+Helpers.swift */; };
 		CEA6490B21AB287F00149DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA6490A21AB287F00149DC3 /* LaunchScreen.storyboard */; };
@@ -71,6 +73,8 @@
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9725D9B02240047700BFBC35 /* JFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFileManager.swift; sourceTree = "<group>"; };
 		9725D9B222400D9400BFBC35 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
+		9725D9B42240292200BFBC35 /* UITextField+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
+		9725D9B62240295F00BFBC35 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		97C3A9902225EFAF001AF12B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
 		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				97C3A9902225EFAF001AF12B /* CalendarView.swift */,
+				9725D9B62240295F00BFBC35 /* BarButtonItem.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */,
 				E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */,
 				9725D9B222400D9400BFBC35 /* URL+Helpers.swift */,
+				9725D9B42240292200BFBC35 /* UITextField+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
 				9725D9B322400D9400BFBC35 /* URL+Helpers.swift in Sources */,
 				CEB3AAAB21AA324200406AE8 /* Observable+Ext.swift in Sources */,
+				9725D9B52240292200BFBC35 /* UITextField+Helpers.swift in Sources */,
 				E7C23893214E0110005E5202 /* ApodModel.swift in Sources */,
 				E7C23895214E042A005E5202 /* Constants.swift in Sources */,
 				CEA6490F21AB2D2500149DC3 /* UIImage+Helpers.swift in Sources */,
@@ -633,6 +640,7 @@
 				E7C23897214E0472005E5202 /* Utilities.swift in Sources */,
 				CEB3AAAD21AA324A00406AE8 /* ActivityIndicator.swift in Sources */,
 				CEA6491321AB2EC500149DC3 /* UIColor+Helpers.swift in Sources */,
+				9725D9B72240295F00BFBC35 /* BarButtonItem.swift in Sources */,
 				CEA6490D21AB2B9F00149DC3 /* String+Helpers.swift in Sources */,
 				E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */,
 				E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */,

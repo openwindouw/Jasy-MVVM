@@ -192,11 +192,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-af-plL">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-af-plL">
                                 <rect key="frame" x="87.5" y="40" width="200" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DJz-Sb-Whd"/>
                                     <constraint firstAttribute="height" constant="44" id="rKS-Kr-TaT"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="z57-SK-Lew"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -214,7 +214,7 @@
                             <constraint firstItem="XBr-ky-dzG" firstAttribute="leading" secondItem="F9z-L9-5g5" secondAttribute="leading" id="MYD-5j-SUE"/>
                             <constraint firstAttribute="bottom" secondItem="XBr-ky-dzG" secondAttribute="bottom" id="Rhh-Ka-xJV"/>
                             <constraint firstItem="XBr-ky-dzG" firstAttribute="top" secondItem="hK3-af-plL" secondAttribute="bottom" id="SP1-Nq-abg"/>
-                            <constraint firstItem="hK3-af-plL" firstAttribute="centerX" secondItem="F9z-L9-5g5" secondAttribute="centerX" id="bd3-Lr-oAB"/>
+                            <constraint firstItem="hK3-af-plL" firstAttribute="centerX" secondItem="F9z-L9-5g5" secondAttribute="centerX" id="euf-Ga-XXH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F9z-L9-5g5"/>
                     </view>

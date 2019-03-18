@@ -12,8 +12,10 @@ struct JUserDefaultsKeys {
     static let currentMonth = "current_month"
 }
 
-
-
+struct DateFormats {
+    static let year = "yyyy"
+    static let `default` = "yyyy-MM-dd"
+}
 
 struct JMetric {
     static let cornerRadius: CGFloat = 6
