@@ -8,16 +8,17 @@
 
 import Foundation
 import RxDataSources
+import RealmSwift
 
-struct ApodModel: Codable {
-    let copyright: String?
-    let date: String
-    let explanation: String
-    let hdurl: String?
-    let mediaType: String?
-    let serviceVersion: String?
-    let title: String
-    let url: String?
+class ApodModel: Object, Codable {
+    @objc dynamic var copyright: String?
+    @objc dynamic var date: String
+    @objc dynamic var explanation: String
+    @objc dynamic var hdurl: String?
+    @objc dynamic var mediaType: String?
+    @objc dynamic var serviceVersion: String?
+    @objc dynamic var title: String
+    @objc dynamic var url: String?
 }
 
 extension ApodModel: IdentifiableType {
@@ -26,11 +27,11 @@ extension ApodModel: IdentifiableType {
     }
 }
 
-extension ApodModel: Equatable {
-    static func == (lhs: ApodModel, rhs: ApodModel) -> Bool {
-        return lhs.date == rhs.date
-    }
-}
+//extension ApodModel: Equatable {
+//    static func == (lhs: ApodModel, rhs: ApodModel) -> Bool {
+//        return lhs.date == rhs.date
+//    }
+//}
 
 extension ApodModel {
     var highURL: URL? {
@@ -43,3 +44,12 @@ extension ApodModel {
         return URL(string: lowUrl)
     }
 }
+
+//Import RealmSwift
+//class Item: Object {
+//    dynamic var ID = 0
+//    dynamic var textString = ""
+//    override static func primaryKey() -> String? {
+//        return “ID”
+//    }
+//}

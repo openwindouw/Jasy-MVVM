@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
+		9725D9AF223FFFDD00BFBC35 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9AE223FFFDD00BFBC35 /* DBManager.swift */; };
+		9725D9B12240047700BFBC35 /* JFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B02240047700BFBC35 /* JFileManager.swift */; };
+		9725D9B322400D9400BFBC35 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B222400D9400BFBC35 /* URL+Helpers.swift */; };
 		97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3A9902225EFAF001AF12B /* CalendarView.swift */; };
 		CEA6490921AAFBA700149DC3 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6490821AAFBA700149DC3 /* Date+Helpers.swift */; };
 		CEA6490B21AB287F00149DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA6490A21AB287F00149DC3 /* LaunchScreen.storyboard */; };
@@ -67,6 +70,9 @@
 		78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.debug.xcconfig"; sourceTree = "<group>"; };
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9725D9AE223FFFDD00BFBC35 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		9725D9B02240047700BFBC35 /* JFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFileManager.swift; sourceTree = "<group>"; };
+		9725D9B222400D9400BFBC35 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		97C3A9902225EFAF001AF12B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9842DBB006C32275D44C24CD /* Pods-Jasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.release.xcconfig"; sourceTree = "<group>"; };
 		B8784010D60187EF1B6DCCDF /* Pods-JasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyUITests/Pods-JasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +164,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9725D9AD223FFFBA00BFBC35 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9725D9AE223FFFDD00BFBC35 /* DBManager.swift */,
+				9725D9B02240047700BFBC35 /* JFileManager.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		97C3A98F2225EF9A001AF12B /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 				CEA6491221AB2EC500149DC3 /* UIColor+Helpers.swift */,
 				E7BBF8CD2210992F00074AE8 /* UIButton+Helpers.swift */,
 				E7BBF8CF2210A71200074AE8 /* UIFont+Helpers.swift */,
+				9725D9B222400D9400BFBC35 /* URL+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +215,7 @@
 		CEB3AAAE21AA325700406AE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9725D9AD223FFFBA00BFBC35 /* Classes */,
 				CEA6490721AAFB1A00149DC3 /* Extensions */,
 				CEB3AAAC21AA324A00406AE8 /* ActivityIndicator.swift */,
 				CEB3AAAA21AA324200406AE8 /* Observable+Ext.swift */,
@@ -469,8 +486,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxNuke/RxNuke.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -491,8 +506,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNuke.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -607,10 +620,12 @@
 				97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */,
 				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
+				9725D9AF223FFFDD00BFBC35 /* DBManager.swift in Sources */,
 				E7BBF8D22210FBAF00074AE8 /* CalendarViewController.swift in Sources */,
 				E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,
 				CEB3AAA921AA2ABA00406AE8 /* ListViewModel.swift in Sources */,
+				9725D9B322400D9400BFBC35 /* URL+Helpers.swift in Sources */,
 				CEB3AAAB21AA324200406AE8 /* Observable+Ext.swift in Sources */,
 				E7C23893214E0110005E5202 /* ApodModel.swift in Sources */,
 				E7C23895214E042A005E5202 /* Constants.swift in Sources */,
@@ -625,6 +640,7 @@
 				CEA6490D21AB2B9F00149DC3 /* String+Helpers.swift in Sources */,
 				E72F469C214CAF4000ECF968 /* ListViewController.swift in Sources */,
 				E72F4698214CADF200ECF968 /* NasaClient.swift in Sources */,
+				9725D9B12240047700BFBC35 /* JFileManager.swift in Sources */,
 				E72F469F214CB08500ECF968 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,7 +808,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = Jasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -802,7 +818,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vel.jasy.Jasy.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -814,8 +830,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LXE5SAW38H;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Jasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

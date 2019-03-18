@@ -17,7 +17,8 @@ target 'Jasy' do
   pod 'RxSwift', '~> 4.4'
   pod 'RxCocoa', '~> 4.4'
   pod 'RxDataSources', '~> 3.1'
-  pod 'RxRealmDataSources', '~> 0.2'
+#  pod 'RxRealmDataSources', '~> 0.2'
+  pod 'RealmSwift', '~> 3.13'
   pod 'RxNuke'
   pod 'FSCalendar'
   
