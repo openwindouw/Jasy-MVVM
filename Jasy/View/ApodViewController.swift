@@ -111,13 +111,19 @@ class ApodViewController: UIViewController {
     }
     
     private func binding() {
-        let pipeline = ImagePipeline.shared
         
-        if let lowUrl = apod.lowURL, let hdurl = apod.highURL {
+        
+        if let image = JFileManager.shared.getImageTo(path: apod.highImageName) {
+            picture.image = image
+        } else if let lowUrl = apod.lowURL, let hdurl = apod.highURL {
+            let pipeline = ImagePipeline.shared
+            
             Observable.concat(pipeline.rx.loadImage(with: lowUrl).orEmpty,
                               pipeline.rx.loadImage(with: hdurl).orEmpty)
                 .subscribe(onNext: { [weak self] in
-                    self?.picture.image = $0.image
+                    guard let strongSelf = self, let apodModel = strongSelf.apod else { return }
+                    strongSelf.picture.image = $0.image
+                    JFileManager.shared.writeImageTo(path: apodModel.highImageName, image: $0.image)
                 })
                 .disposed(by: disposeBag)
         } else {

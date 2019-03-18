@@ -16,8 +16,6 @@ class JFileManager {
     func writeImageTo(path:String, image:UIImage) {
         let uploadURL = URL.createFolder(folderName: JFileManager.folderName)!.appendingPathComponent(path)
         
-        guard !FileManager.default.fileExists(atPath: uploadURL.path) else { return }
-        print("File does NOT exist -- \(uploadURL) -- is available for use")
         let data = image.jpegData(compressionQuality: 1)
         do {
             print("Write image")
