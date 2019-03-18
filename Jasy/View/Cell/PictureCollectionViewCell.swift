@@ -46,13 +46,20 @@ class PictureCollectionViewCell: UICollectionViewCell {
         titleLabel.text = apod.title
         dateLabel.text = apod.date
         
-        guard let urlString = apod.url else { return }
-        guard let url = URL(string: urlString) else { return }
-        
-        ImagePipeline.shared.rx.loadImage(with: url)
-            .subscribe(onSuccess: { self.picture.image = $0.image })
-            .disposed(by: disposeBag)
-        
+        if let image = JFileManager.shared.getImageTo(path: apod.lowImageName) {
+            picture.image = image
+        } else {
+            guard let urlString = apod.url else { return }
+            guard let url = URL(string: urlString) else { return }
+            
+            ImagePipeline.shared.rx.loadImage(with: url)
+                .subscribe(onSuccess: { [weak self] in
+                    self?.picture.image = $0.image
+                    
+                    JFileManager.shared.writeImageTo(path: apod.lowImageName, image: $0.image)
+                })
+                .disposed(by: disposeBag)
+        }
     }
     
     override func prepareForReuse() {

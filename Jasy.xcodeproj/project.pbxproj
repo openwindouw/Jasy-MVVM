@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A32D228CBFBE42243014A0C /* Pods_JasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE30A70944CD74115BDF5B /* Pods_JasyTests.framework */; };
 		55DAE18AA693C376337683EC /* Pods_JasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081A338DC8A36CEB4A59F50 /* Pods_JasyUITests.framework */; };
-		9725D9AF223FFFDD00BFBC35 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9AE223FFFDD00BFBC35 /* DBManager.swift */; };
 		9725D9B12240047700BFBC35 /* JFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B02240047700BFBC35 /* JFileManager.swift */; };
 		9725D9B322400D9400BFBC35 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725D9B222400D9400BFBC35 /* URL+Helpers.swift */; };
 		97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3A9902225EFAF001AF12B /* CalendarView.swift */; };
@@ -70,7 +69,6 @@
 		78ACE63ABC5CD7E9EB57B284 /* Pods-JasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B3B86F21851FCB173A252AA /* Pods-Jasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jasy/Pods-Jasy.debug.xcconfig"; sourceTree = "<group>"; };
 		809B7DCB8724B3A62A3BFE1E /* Pods-JasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JasyTests/Pods-JasyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9725D9AE223FFFDD00BFBC35 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		9725D9B02240047700BFBC35 /* JFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFileManager.swift; sourceTree = "<group>"; };
 		9725D9B222400D9400BFBC35 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		97C3A9902225EFAF001AF12B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 		9725D9AD223FFFBA00BFBC35 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9725D9AE223FFFDD00BFBC35 /* DBManager.swift */,
 				9725D9B02240047700BFBC35 /* JFileManager.swift */,
 			);
 			path = Classes;
@@ -620,7 +617,6 @@
 				97C3A9912225EFAF001AF12B /* CalendarView.swift in Sources */,
 				E7BBF8CC2210868600074AE8 /* ApodViewModel.swift in Sources */,
 				CEA6491121AB2E7500149DC3 /* NasaConstants.swift in Sources */,
-				9725D9AF223FFFDD00BFBC35 /* DBManager.swift in Sources */,
 				E7BBF8D22210FBAF00074AE8 /* CalendarViewController.swift in Sources */,
 				E7BBF8D02210A71200074AE8 /* UIFont+Helpers.swift in Sources */,
 				E7C23890214DFF96005E5202 /* ApodService.swift in Sources */,

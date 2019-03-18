@@ -8,38 +8,33 @@
 
 import UIKit
 
-struct JFileManager {
-    
+class JFileManager {
     static let folderName = "upload"
-    
+    static var shared = JFileManager()
     private init() {}
-    static let shared = JFileManager()
 
-    static func writeImageTo(path:String, image:UIImage) {
+    func writeImageTo(path:String, image:UIImage) {
         let uploadURL = URL.createFolder(folderName: JFileManager.folderName)!.appendingPathComponent(path)
         
-        if !FileManager.default.fileExists(atPath: uploadURL.path) {
-            print("File does NOT exist -- \(uploadURL) -- is available for use")
-            let data = image.jpegData(compressionQuality: 1)
-            do {
-                print("Write image")
-                try data!.write(to: uploadURL)
-            }
-            catch {
-                print("Error Writing Image: \(error)")
-            }
-        } else {
-            print("This file exists -- something is already placed at this location")
+        guard !FileManager.default.fileExists(atPath: uploadURL.path) else { return }
+        print("File does NOT exist -- \(uploadURL) -- is available for use")
+        let data = image.jpegData(compressionQuality: 1)
+        do {
+            print("Write image")
+            try data!.write(to: uploadURL)
+        }
+        catch {
+            print("Error Writing Image: \(error)")
         }
     }
 
-    static func getImageTo(path: String) -> UIImage? {
+    func getImageTo(path: String) -> UIImage? {
         guard let uploadURL = URL.createFolder(folderName: JFileManager.folderName)?.appendingPathComponent(path) else { return nil }
         guard FileManager.default.fileExists(atPath: uploadURL.path), let image = UIImage(contentsOfFile: uploadURL.path) else { return nil }
         return image
     }
     
-    static func deleteAll() {
+    func deleteAll() {
         
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         
