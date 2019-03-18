@@ -21,8 +21,6 @@ class CalendarViewController: UIViewController {
     // last date in the range
     private var lastDate: Date?
     
-    private var disposeBag = DisposeBag()
-    
     private var _selectedYearsSubject = PublishSubject<CalendarSelection>()
     
     var selectedYearsObservable: Observable<CalendarSelection>? {
@@ -57,11 +55,14 @@ class CalendarViewController: UIViewController {
         
         yearTextField.rightView = rightView
     }
+    
+    deinit {
+        _selectedYearsSubject.dispose()
+    }
 }
 
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        // nothing selected:
         if firstDate == nil {
             firstDate = date
         } else if lastDate == nil { // only first date is selected:
@@ -75,17 +76,6 @@ extension CalendarViewController: FSCalendarDelegate {
             
             _selectedYearsSubject.onNext(CalendarSelection(start: firstDate!, end: lastDate!))
             navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        // both are selected:
-        
-        // NOTE: the is a REDUANDENT CODE:
-        if firstDate != nil && lastDate != nil {
-            
-            lastDate = nil
-            firstDate = nil
         }
     }
     

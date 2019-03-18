@@ -63,13 +63,6 @@ class ListViewController: UIViewController {
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
 
-            if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-                if let backgroundview = textfield.subviews.first {
-                    backgroundview.layer.cornerRadius = 10
-                    backgroundview.clipsToBounds = true
-                }
-            }
-
             if let navigationbar = self.navigationController?.navigationBar {
                 navigationbar.barTintColor = UIColor.primary
             }
@@ -78,7 +71,6 @@ class ListViewController: UIViewController {
             navigationItem.hidesSearchBarWhenScrolling = true
         } else {
             let searchImage = R.image.lupa()?.withRenderingMode(.alwaysTemplate).tinted(with: .white)
-            
             searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchBarButtonAction))
             navigationItem.rightBarButtonItem = searchBarButtonItem
         }
@@ -124,6 +116,20 @@ class ListViewController: UIViewController {
             .throttle(0.3)
             .drive(onNext: { [unowned self] in
                 let calendarViewController = R.storyboard.main.calendar()!
+                _ = calendarViewController.selectedYearsObservable?.subscribe(onNext: { dates in
+                    JFileManager.shared.deleteAll()
+                    
+                    
+                    let userDefaults = UserDefaults.standard
+                    
+                    userDefaults.set(dates.start.formattedDate, forKey: JUserDefaultsKeys.selectedStartDate)
+                    userDefaults.set(dates.end.formattedDate, forKey: JUserDefaultsKeys.selectedEndDate)
+                    
+                    userDefaults.synchronize()
+                    
+                    output.startDateSubject.onNext(dates.start.formattedDate)
+                    output.endDateSubject.onNext(dates.end.formattedDate)
+                })
                 self.navigationController?.pushViewController(calendarViewController, animated: true)
             })
             .disposed(by: disposeBag)

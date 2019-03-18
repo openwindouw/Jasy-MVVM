@@ -10,6 +10,9 @@ import UIKit
 
 struct JUserDefaultsKeys {
     static let currentMonth = "current_month"
+    
+    static let selectedStartDate = "selected_start_date"
+    static let selectedEndDate = "selected_end_date"
 }
 
 struct DateFormats {

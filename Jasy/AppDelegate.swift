@@ -27,6 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.isTranslucent = false
         navigationBarAppearance.shadowImage = UIImage()
         
+        //UIButtonBarButton
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).title = "Cancel"
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Cancel"
+        
+        let searchBarTextField = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        searchBarTextField.tintColor = .white
+        searchBarTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.gray
+        ])
+        
         UITextField.appearance().tintColor = .black
         
         return true

@@ -22,6 +22,8 @@ struct ListViewModel {
     
     struct Output {
         var sections: Observable<[Section]>
+        var startDateSubject: BehaviorSubject<String>
+        var endDateSubject: BehaviorSubject<String>
         var fetching: Driver<Bool>
     }
     
@@ -32,13 +34,32 @@ struct ListViewModel {
     func transform(with input: Input) -> Output {
         let activityIndicator = ActivityIndicator()
         
-        //Just for testing purpose
+        let userDefaults = UserDefaults.standard
         let startOfMonth = Date().startOfMonth()
-        let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
+        
+        let startSubject: BehaviorSubject<String>
+        let endSubject: BehaviorSubject<String>
+        
+        if let storedStartDate = userDefaults.string(forKey: JUserDefaultsKeys.selectedStartDate), !storedStartDate.isEmpty {
+            startSubject = BehaviorSubject<String>(value: storedStartDate)
+        } else {
+            let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
+            startSubject = BehaviorSubject<String>(value: formattedStartOfTheMonth)
+        }
+        
+        if let storedEndDate = userDefaults.string(forKey: JUserDefaultsKeys.selectedEndDate), !storedEndDate.isEmpty {
+            endSubject = BehaviorSubject<String>(value: storedEndDate)
+        } else {
+            endSubject = BehaviorSubject<String>(value: Date.formattedToday)
+        }
+        
+        let apodObservable = Observable.zip(startSubject.asObservable(), endSubject.asObservable())
+            .flatMapLatest { start, end in
+                self.apodService.getApod(start: start, end: end).trackActivity(activityIndicator)
+        }
         
         let sections = Observable
-            .combineLatest(self.apodService.getApod(start: formattedStartOfTheMonth, end: Date.formattedToday), input.searchObservable)
-            .trackActivity(activityIndicator)
+            .combineLatest(apodObservable, input.searchObservable)
             .flatMapLatest { (result, searchText) -> Observable<[Section]> in
                 switch result {
                 case .success(let value):
@@ -69,6 +90,9 @@ struct ListViewModel {
                 }
             }
         
-        return Output(sections: sections, fetching: activityIndicator.asDriver())
+        return Output(sections: sections,
+                      startDateSubject: startSubject,
+                      endDateSubject: endSubject,
+                      fetching: activityIndicator.asDriver())
     }
 }
