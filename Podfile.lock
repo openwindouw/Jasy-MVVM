@@ -2,10 +2,7 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireLogging (1.0.4):
     - Alamofire (~> 4.8)
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
   - Differentiator (3.1.0)
-  - Fabric (1.9.0)
   - Firebase (4.13.0):
     - Firebase/Core (= 4.13.0)
   - Firebase/Core (4.13.0):
@@ -45,11 +42,6 @@ PODS:
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
-  - Realm (3.13.1):
-    - Realm/Headers (= 3.13.1)
-  - Realm/Headers (3.13.1)
-  - RealmSwift (3.13.1):
-    - Realm (= 3.13.1)
   - RxAtomic (4.4.2)
   - RxBlocking (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
@@ -73,13 +65,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireLogging (~> 1.0)
-  - Crashlytics
-  - Fabric
   - Firebase (~> 4.8)
   - Firebase/Messaging
   - FSCalendar
   - R.swift (~> 5.0)
-  - RealmSwift (~> 3.13)
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.4)
   - RxDataSources (~> 3.1)
@@ -92,9 +81,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireLogging
-    - Crashlytics
     - Differentiator
-    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -107,8 +94,6 @@ SPEC REPOS:
     - Protobuf
     - R.swift
     - R.swift.Library
-    - Realm
-    - RealmSwift
     - RxAtomic
     - RxBlocking
     - RxCocoa
@@ -121,9 +106,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireLogging: 3f05d8db23b26fef1131776548ba4d35562a871e
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
@@ -136,8 +119,6 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
-  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
-  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxBlocking: e96fdda1473d81332a6ed2cface935dc2167a122
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
@@ -147,6 +128,6 @@ SPEC CHECKSUMS:
   RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: f8f2d90b55fdfd8267f0c031ecdf05a691ca2063
+PODFILE CHECKSUM: 473209cb2d6c35dcef822babe120fe9eceedd572
 
 COCOAPODS: 1.5.2

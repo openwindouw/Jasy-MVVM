@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import RealmSwift
 
 protocol ApodServiceProtocol {
     func getApod(start: String, end: String) -> Observable<Result<[ApodModel]>>
@@ -16,20 +15,15 @@ protocol ApodServiceProtocol {
 
 struct ApodService: ApodServiceProtocol {
     func getApod(start: String, end: String) -> Observable<Result<[ApodModel]>> {
+        let parameters: JDictionary = [
+            "start_date" : start,
+            "end_date" : end,
+            "api_key" : NasaConstants.apiKey
+            ] as [String: AnyObject]
         
-//        if let result = try? Realm().objects(ApodModel.self) {
-//            return .just(.success(Array(result)))
-//        } else {
-            let parameters: JDictionary = [
-                "start_date" : start,
-                "end_date" : end,
-                "api_key" : NasaConstants.apiKey
-                ] as [String: AnyObject]
-            
-            let endpoint = NasaConstants.base + "/planetary/apod"
-            
-            return NASAClient.request(verb: .get, url: endpoint, parameters: parameters, encoding: .query)
-                .retry(3)
-//        }
+        let endpoint = NasaConstants.base + "/planetary/apod"
+        
+        return NASAClient.request(verb: .get, url: endpoint, parameters: parameters, encoding: .query)
+            .retry(3)
     }
 }

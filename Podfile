@@ -7,8 +7,6 @@ target 'Jasy' do
 
   # Pods for Jasy
   pod 'Firebase', '~> 4.8'
-  pod 'Fabric'
-  pod 'Crashlytics'
   pod 'R.swift', '~> 5.0'
   pod 'SnapKit', '~> 4.2'
   pod 'Firebase/Messaging'
@@ -17,8 +15,6 @@ target 'Jasy' do
   pod 'RxSwift', '~> 4.4'
   pod 'RxCocoa', '~> 4.4'
   pod 'RxDataSources', '~> 3.1'
-#  pod 'RxRealmDataSources', '~> 0.2'
-  pod 'RealmSwift', '~> 3.13'
   pod 'RxNuke'
   pod 'FSCalendar'
   
