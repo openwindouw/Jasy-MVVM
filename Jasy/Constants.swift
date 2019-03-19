@@ -18,6 +18,7 @@ struct JUserDefaultsKeys {
 struct DateFormats {
     static let year = "yyyy"
     static let `default` = "yyyy-MM-dd"
+    static let pretty = "LLLL dd, yyyy"
 }
 
 struct JMetric {

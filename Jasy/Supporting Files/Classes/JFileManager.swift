@@ -45,7 +45,9 @@ class JFileManager {
                 try FileManager.default.removeItem(at: fileURL)
             }
             
-        } catch  { print(error) }
+        } catch  {
+            print(error)
+        }
     }
 }
 

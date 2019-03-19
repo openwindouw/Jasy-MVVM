@@ -30,7 +30,7 @@ struct Utilities {
             UIActivity.ActivityType.postToWeibo,
             UIActivity.ActivityType.print,
             UIActivity.ActivityType.assignToContact,
-            UIActivity.ActivityType.saveToCameraRoll,
+//            UIActivity.ActivityType.saveToCameraRoll,
             UIActivity.ActivityType.addToReadingList,
             UIActivity.ActivityType.postToFlickr,
             UIActivity.ActivityType.postToVimeo,

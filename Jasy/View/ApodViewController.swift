@@ -52,7 +52,7 @@ class ApodViewController: UIViewController {
     }
     
     private func setup() {
-        title = apod.date
+        title = apod.prettyDate
         
         view.backgroundColor = .black
         

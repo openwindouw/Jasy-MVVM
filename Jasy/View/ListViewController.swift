@@ -90,7 +90,7 @@ class ListViewController: UIViewController {
     private func bindViewModel() {
         
         dataSource = RxCollectionViewSectionedAnimatedDataSource<Section>(configureCell: { dataSource, collectionView, indexPath, item -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.pictureCellID.identifier, for: indexPath) as! PictureCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.pictureCellID, for: indexPath)!
             cell.configure(for: item)
             return cell
         })
@@ -118,7 +118,6 @@ class ListViewController: UIViewController {
                 let calendarViewController = R.storyboard.main.calendar()!
                 _ = calendarViewController.selectedYearsObservable?.subscribe(onNext: { dates in
                     JFileManager.shared.deleteAll()
-                    
                     
                     let userDefaults = UserDefaults.standard
                     

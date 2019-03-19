@@ -45,6 +45,9 @@ extension ApodModel {
     }
     
     var lowImageName: String { return date }
-    
     var highImageName: String { return "hd-\(date)" }
+    
+    var prettyDate: String {
+        return Utilities.convert(currentDate: date, in: DateFormats.default, to: DateFormats.pretty)
+    }
 }

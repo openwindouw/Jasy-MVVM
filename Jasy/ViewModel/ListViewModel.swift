@@ -35,7 +35,6 @@ struct ListViewModel {
         let activityIndicator = ActivityIndicator()
         
         let userDefaults = UserDefaults.standard
-        let startOfMonth = Date().startOfMonth()
         
         let startSubject: BehaviorSubject<String>
         let endSubject: BehaviorSubject<String>
@@ -43,7 +42,7 @@ struct ListViewModel {
         if let storedStartDate = userDefaults.string(forKey: JUserDefaultsKeys.selectedStartDate), !storedStartDate.isEmpty {
             startSubject = BehaviorSubject<String>(value: storedStartDate)
         } else {
-            let formattedStartOfTheMonth = startOfMonth?.formattedDate ?? ""
+            let formattedStartOfTheMonth = Date().startOfMonth()?.formattedDate ?? ""
             startSubject = BehaviorSubject<String>(value: formattedStartOfTheMonth)
         }
         
@@ -56,14 +55,13 @@ struct ListViewModel {
         let apodObservable = Observable.zip(startSubject.asObservable(), endSubject.asObservable())
             .flatMapLatest { start, end in
                 self.apodService.getApod(start: start, end: end).trackActivity(activityIndicator)
-        }
+            }
         
         let sections = Observable
             .combineLatest(apodObservable, input.searchObservable)
             .flatMapLatest { (result, searchText) -> Observable<[Section]> in
                 switch result {
                 case .success(let value):
-                    
                     guard let searchText = searchText, !searchText.isEmpty else {
                         return .just([Section(model: "", items: value.sorted(by: { $0.date > $1.date }))])
                     }

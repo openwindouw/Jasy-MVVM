@@ -15,7 +15,6 @@ class PictureCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-//    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     
     var disposeBag = DisposeBag()
     
@@ -37,14 +36,11 @@ class PictureCollectionViewCell: UICollectionViewCell {
         picture.contentMode = .scaleAspectFill
         
         picture.layer.masksToBounds = true
-//        activityIndicator.type = .lineScalePulseOutRapid
-//        activityIndicator.padding = 30
-//        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
     }
     
     func configure(for apod: ApodModel) {
         titleLabel.text = apod.title
-        dateLabel.text = apod.date
+        dateLabel.text = apod.prettyDate
         
         if let image = JFileManager.shared.getImageTo(path: apod.lowImageName) {
             picture.image = image
@@ -70,27 +66,8 @@ class PictureCollectionViewCell: UICollectionViewCell {
         picture.image = nil
         titleLabel.isHidden = false
         dateLabel.isHidden = false
-//        activityIndicator.isHidden = true
     }
 }
-
-//extension PictureCollectionViewCell {
-//    func showActivityIndicator() {
-//        if !activityIndicator.isAnimating {
-//            Utils.performUIUpdatesOnMain {
-//                self.activityIndicator.startAnimating()
-//            }
-//        }
-//        
-//    }
-//    
-//    func hideActivityIndicator() {
-//        Utils.performUIUpdatesOnMain {
-//            self.activityIndicator.stopAnimating()
-//            self.activityIndicator.isHidden = true
-//        }
-//    }
-//}
 
 
 
