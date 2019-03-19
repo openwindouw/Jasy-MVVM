@@ -18,6 +18,16 @@ class ApodModel: Codable {
     var serviceVersion: String?
     var title: String
     var url: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case date = "date"
+        case explanation = "explanation"
+        case hdurl = "hdurl"
+        case mediaType = "media_type"
+        case serviceVersion = "service_version"
+        case title = "title"
+        case url = "url"
+    }
 }
 
 extension ApodModel: IdentifiableType {

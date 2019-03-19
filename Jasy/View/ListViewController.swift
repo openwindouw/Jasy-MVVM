@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import FirebaseAnalytics
 
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +24,12 @@ class ListViewController: UIViewController {
         let activity = UIActivityIndicatorView()
         activity.tintColor = .primary
         return activity
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = .white
+        return control
     }()
     
     private lazy var values: [ApodModel]! = {
@@ -85,6 +92,8 @@ class ListViewController: UIViewController {
         navigationItem.leftBarButtonItem = calendarButton
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        
+        collectionView.refreshControl = refreshControl
     }
     
     private func bindViewModel() {
@@ -129,7 +138,23 @@ class ListViewController: UIViewController {
                     output.startDateSubject.onNext(dates.start.formattedDate)
                     output.endDateSubject.onNext(dates.end.formattedDate)
                 })
+                
+                Analytics.logEvent(AnalyticsKeys.goToDetail, parameters: nil)
+                
                 self.navigationController?.pushViewController(calendarViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                let currentDate = Date()
+                let firstDateOfMonth = currentDate.startOfMonth()!
+                
+                output.startDateSubject.onNext(firstDateOfMonth.formattedDate)
+                output.endDateSubject.onNext(currentDate.formattedDate)
+                
+                self?.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
         

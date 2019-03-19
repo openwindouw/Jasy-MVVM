@@ -56,7 +56,8 @@ class CalendarViewController: UIViewController {
         yearTextField.rightView = rightView
     }
     
-    deinit {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         _selectedYearsSubject.dispose()
     }
 }

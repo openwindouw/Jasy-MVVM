@@ -21,6 +21,11 @@ struct DateFormats {
     static let pretty = "LLLL dd, yyyy"
 }
 
+struct AnalyticsKeys {
+    static let goToDetail = "go_to_apod_detail"
+    static let showInfo = "show_apod_info"
+}
+
 struct JMetric {
     static let cornerRadius: CGFloat = 6
     static let borderWidth: CGFloat = 1

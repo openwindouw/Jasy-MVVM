@@ -42,7 +42,9 @@ class PictureCollectionViewCell: UICollectionViewCell {
         titleLabel.text = apod.title
         dateLabel.text = apod.prettyDate
         
-        if let image = JFileManager.shared.getImageTo(path: apod.lowImageName) {
+        if apod.mediaType == "video" {
+            picture.image = R.image.video()?.withRenderingMode(.alwaysTemplate).resize(width: 40, heigth: 40)?.tinted(with: .white)
+        } else if let image = JFileManager.shared.getImageTo(path: apod.lowImageName) {
             picture.image = image
         } else {
             guard let urlString = apod.url else { return }
@@ -56,6 +58,8 @@ class PictureCollectionViewCell: UICollectionViewCell {
                 })
                 .disposed(by: disposeBag)
         }
+        
+        picture.contentMode = apod.mediaType == "video" ? .center : .scaleToFill
     }
     
     override func prepareForReuse() {

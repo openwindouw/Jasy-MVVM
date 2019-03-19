@@ -12,6 +12,7 @@ import RxSwift
 import Nuke
 import RxNuke
 import SnapKit
+import FirebaseAnalytics
 
 class ApodViewController: UIViewController {
     
@@ -108,6 +109,8 @@ class ApodViewController: UIViewController {
         explanationTextView.contentOffset = .zero
 
         navigationItem.rightBarButtonItem = shareButton
+        
+        Analytics.logEvent(AnalyticsKeys.showInfo, parameters: nil)
     }
     
     private func binding() {
