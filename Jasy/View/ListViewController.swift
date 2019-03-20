@@ -114,7 +114,8 @@ class ListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         collectionView.rx.modelSelected(ApodModel.self)
-            .subscribe(onNext: { [unowned self] apodModel in
+            .asDriver()
+            .drive(onNext: { [unowned self] apodModel in
                 let apodViewController = R.storyboard.main.apod()!
                 apodViewController.apod = apodModel
                 self.navigationController?.pushViewController(apodViewController, animated: true)
@@ -150,6 +151,13 @@ class ListViewController: UIViewController {
             .drive(onNext: { [weak self] in
                 let currentDate = Date()
                 let firstDateOfMonth = currentDate.startOfMonth()!
+                
+                let userDefaults = UserDefaults.standard
+                
+                userDefaults.set(firstDateOfMonth.formattedDate, forKey: JUserDefaultsKeys.selectedStartDate)
+                userDefaults.set(currentDate.formattedDate, forKey: JUserDefaultsKeys.selectedEndDate)
+                
+                userDefaults.synchronize()
                 
                 output.startDateSubject.onNext(firstDateOfMonth.formattedDate)
                 output.endDateSubject.onNext(currentDate.formattedDate)
