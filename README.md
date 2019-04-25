@@ -1,4 +1,4 @@
-# Jasy
+# Jasy [![Build Status](https://travis-ci.org/openwindouw/Jasy-MVVM.svg?branch=develop)](https://travis-ci.org/openwindouw/Jasy-MVVM)
 
 Jasy(moon, in guarani language) is an iOS app that works with Astronomy Picture of the Day API service(APOD). Users can search apods by month and year, between 1995-06-16 and the current day.
 
