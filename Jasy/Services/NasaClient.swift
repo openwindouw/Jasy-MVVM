@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import RxSwift
-import AlamofireLogging
+import Sniffer
 
 typealias DataResponse = Alamofire.DataResponse
 typealias JSONObject = [String: Any]
@@ -39,7 +39,7 @@ enum Encoding {
 
 class NASAClient {
     
-    static func request<T: Codable>(verb: HTTPMethod = .get, url: String, parameters: [String: AnyObject] = [:], headers: [String: String] = [:], encoding: Encoding = .default) -> Observable<Result<T>> {
+    static func request<T: Codable>(verb: HTTPMethod = .get, url: String, parameters: [String: AnyObject] = [:], headers: HTTPHeaders = [:], encoding: Encoding = .default) -> Observable<Result<T>> {
         return Observable.create { observable in
             
             let request = JSessionManager.shared.request(url,
@@ -48,7 +48,7 @@ class NASAClient {
                                                            encoding: encoding.alamofire,
                                                            headers: headers)
             
-            request.log().responseData(completionHandler: { response in
+            request.responseData(completionHandler: { response in
                 
                 
                 guard response.error == nil, let data = response.data else {
@@ -76,9 +76,10 @@ class NASAClient {
     }
 }
 
-class JSessionManager: SessionManager {
+class JSessionManager: Session {
     static let shared: JSessionManager = {
         let configuration = URLSessionConfiguration.default
+        Sniffer.enable(in: configuration)
         configuration.timeoutIntervalForRequest = 60
         configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         let manager = JSessionManager(configuration: configuration)

@@ -6,17 +6,18 @@ target 'Jasy' do
   use_frameworks!
 
   # Pods for Jasy
-  pod 'Firebase', '~> 4.8'
+  pod 'Firebase', '~> 6.0'
   pod 'R.swift', '~> 5.0'
-  pod 'SnapKit', '~> 4.2'
+  pod 'SnapKit', '~> 5.0'
   pod 'Firebase/Messaging'
-  pod 'Alamofire', '~> 4.7'
-  pod 'AlamofireLogging', '~> 1.0'
+  pod 'Alamofire', '5.0.0-beta.6'
+#  pod 'AlamofireLogging', '~> 1.0'
   pod 'RxSwift', '~> 4.4'
   pod 'RxCocoa', '~> 4.4'
   pod 'RxDataSources', '~> 3.1'
-  pod 'RxNuke'
-  pod 'FSCalendar'
+  pod 'RxNuke', '~> 0.8'
+  pod 'FSCalendar', '~> 2.8'
+  pod 'Sniffer', '~> 2.0'
   
   target 'JasyTests' do
     inherit! :search_paths
