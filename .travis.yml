@@ -1,7 +1,19 @@
 language: objective-c
 osx_image: xcode10.2
-xcode_workspace: Jasy.xcworkspace
-xcode_scheme: Jasy
-xcode_destination: platform=iOS Simulator,OS=10.0,name=iPhone 6s
+
+env:
+  #environment variables
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+    - PROJECT_NAME="Jasy.xcworkspace"
+    - SCHEME_IOS="Jasy"
+    - IOS_SDK=iphonesimulator12.2
+  matrix:
+    - DESTINATION="OS=12.2,name=iPhone X" SCHEME="$SCHEME_IOS" SDK="$IOS_SDK"
+
 before_install:
-- pod install --repo-update
+  - pod install --repo-update
+
+script:
+  - xcodebuild test -project "$PROJECT_NAME" -scheme "$SCHEME" -destination "$DESTINATION" -sdk "$SDK" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
