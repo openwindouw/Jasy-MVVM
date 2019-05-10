@@ -1,5 +1,5 @@
 # Jasy
-
+[![Build Status](https://travis-ci.org/openwindouw/Jasy-MVVM.svg?branch=master)](https://travis-ci.org/openwindouw/Jasy-MVVM)
 [![Swift5](https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![MIT License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ra1028/Former/master/LICENSE)
 
