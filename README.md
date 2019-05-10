@@ -1,18 +1,18 @@
 # Jasy
 
+[![Swift5](https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![MIT License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ra1028/Former/master/LICENSE)
+
 Jasy(moon, in guarani language) is an iOS app that works with Astronomy Picture of the Day API service(APOD). Users can search apods by month and year, between 1995-06-16 and the current day.
 
 Every Apod has its corresponding description and attached resources.
 
 ![alt text](https://github.com/vlados456/Jasy-MVVM/blob/develop/screenshots/screen-1.png)
-![alt text](https://github.com/vlados456/Jasy-MVVM/blob/develop/screenshots/screen-2.png)
-![alt text](https://github.com/vlados456/Jasy-MVVM/blob/develop/screenshots/screen-3.png)
-![alt text](https://github.com/vlados456/Jasy-MVVM/blob/develop/screenshots/screen-4.png)
 
 
 ## Requirements
-- Xcode 10.1
-- Swift 4.2
+- Xcode 10.2
+- Swift 5
 
 ## Running Project
 - Download or clone repository
