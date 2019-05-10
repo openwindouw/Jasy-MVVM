@@ -2,6 +2,6 @@ language: objective-c
 osx_image: xcode10.2
 xcode_workspace: Jasy.xcworkspace
 xcode_scheme: Jasy
-xcode_destination: platform=iOS Simulator,OS=10.0,name=iPhone 6s
+xcode_destination: platform=iOS Simulator,OS=11.0,name=iPhone 6s
 before_install:
 - pod install --repo-update
