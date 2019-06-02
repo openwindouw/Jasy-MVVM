@@ -1,7 +1,16 @@
-language: objective-c
+# references:
+# * https://www.objc.io/issues/6-build-tools/travis-ci/
+# * https://github.com/supermarin/xcpretty#usage
+
 osx_image: xcode10.2
-xcode_workspace: Jasy.xcworkspace
-xcode_scheme: Jasy
-xcode_destination: platform=iOS Simulator,OS=10.0,name=iPhone 6s
+language: objective-c
+# cache: cocoapods
+# podfile: Podfile
+# before_install:
+# - gem install cocoapods # Since Travis is not always on latest version
+script:
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Jasy.xcworkspace -scheme Jasy -sdk iphonesimulator12.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+
 before_install:
+- sudo gem install cocoapods
 - pod install --repo-update
