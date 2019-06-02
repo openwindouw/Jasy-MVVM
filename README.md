@@ -5,10 +5,13 @@
 
 Jasy(moon, in guarani language) is an iOS app that works with Astronomy Picture of the Day API service(APOD). Users can search apods by month and year, between 1995-06-16 and the current day.
 
-Every Apod has its corresponding description and attached resources.
+The repository contains examples of:
+- MVVM Design Pattern
+- RxSwift and RxCocoa Implementations
+- Request Handler using Codable
+- CI with Travis.
 
 ![alt text](https://github.com/vlados456/Jasy-MVVM/blob/develop/screenshots/screen-1.png)
-
 
 ## Requirements
 - Xcode 10.2
@@ -18,6 +21,10 @@ Every Apod has its corresponding description and attached resources.
 - Download or clone repository
 - Run **pod install**
 - Open **Jasy.xcworkspace**
+
+## Todo
+- UI Testing
+- FlowCoordinator Pattern
 
 ## Author
 
